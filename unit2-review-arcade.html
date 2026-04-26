@@ -798,19 +798,628 @@ title:"Ionic Survival",
 subtitle:"Sort compounds, dissolve salt, and explain why solutions conduct.",
 topics:["ionic_vs_molecular","dissolving_salt","aqueous_conductivity","conductors_insulators"],
 questions:[
-{id:"io001",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:1,type:"multiple_choice",prompt:"NaCl is best classified as...",choices:["Ionic","Molecular","A single atom","A neutron"],answer:"Ionic",explanation:"NaCl is made from a metal and nonmetal and forms ions."},
-{id:"io002",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:1,type:"multiple_choice",prompt:"H₂O is best classified as...",choices:["Molecular","Ionic","Metallic","A proton"],answer:"Molecular",explanation:"Water is made of nonmetals bonded together as molecules."},
-{id:"io003",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:1,type:"multiple_choice",prompt:"CaO is best classified as...",choices:["Ionic","Molecular","Neutral paper","An electron"],answer:"Ionic",explanation:"Calcium is a metal and oxygen is a nonmetal, so CaO is ionic."},
-{id:"io004",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:1,type:"multiple_choice",prompt:"CCl₄ is best classified as...",choices:["Molecular","Ionic","A salt solution","A nucleus"],answer:"Molecular",explanation:"Carbon and chlorine are nonmetals, so this is a molecular compound."},
-{id:"io005",mode:"ionic-survival",topic:"dissolving_salt",difficulty:2,type:"multiple_choice",prompt:"What happens when NaCl dissolves in water?",choices:["Na⁺ and Cl⁻ ions separate and spread out","NaCl turns into protons","Water becomes pure metal","Electrons disappear"],answer:"Na⁺ and Cl⁻ ions separate and spread out",explanation:"Polar water pulls ions from the salt crystal into solution."},
-{id:"io006",mode:"ionic-survival",topic:"aqueous_conductivity",difficulty:2,type:"multiple_choice",prompt:"Why does saltwater conduct electricity better than pure water?",choices:["It contains moving ions","It contains large protons","It has no particles","It is colder"],answer:"It contains moving ions",explanation:"Dissolved ions can move through the solution and carry charge."},
-{id:"io007",mode:"ionic-survival",topic:"aqueous_conductivity",difficulty:2,type:"multiple_choice",prompt:"A solid dissolves in water and makes a colorless solution. Is that alone enough to prove it is ionic?",choices:["No, more evidence is needed","Yes, all colorless solutions are ionic","Yes, all dissolved solids conduct","No, because ionic compounds never dissolve"],answer:"No, more evidence is needed",explanation:"Both ionic and molecular substances can dissolve. Conductivity evidence would help identify ions."},
-{id:"io008",mode:"ionic-survival",topic:"conductors_insulators",difficulty:1,type:"multiple_choice",prompt:"A conductor is a material that...",choices:["allows charge to move easily","blocks all motion forever","has only neutrons","cannot contain atoms"],answer:"allows charge to move easily",explanation:"Conductors allow charges to move through them."},
-{id:"io009",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:2,type:"multiple_choice",prompt:"Mg(OH)₂ is best classified as...",choices:["Ionic","Molecular","Only oxygen","Only hydrogen"],answer:"Ionic",explanation:"It contains Mg²⁺ and hydroxide ions, so it is ionic."},
-{id:"io010",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:2,type:"multiple_choice",prompt:"C₆H₁₂O₆ is best classified as...",choices:["Molecular","Ionic","Metallic","Ionized air"],answer:"Molecular",explanation:"Glucose is made of nonmetal atoms bonded as molecules."}
+{
+  id: "io001",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "NaCl is best classified as:",
+  choices: [
+    "Ionic",
+    "Molecular",
+    "Metallic",
+    "Covalent network"
+  ],
+  answer: "Ionic",
+  explanation: "NaCl is formed from a metal (Na) and a nonmetal (Cl) and exists as oppositely charged ions."
+},
+ 
+{
+  id: "io002",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "H₂O is best classified as:",
+  choices: [
+    "Ionic",
+    "Molecular",
+    "Metallic",
+    "A salt"
+  ],
+  answer: "Molecular",
+  explanation: "Water is made of nonmetal atoms bonded covalently, forming discrete molecules."
+},
+ 
+{
+  id: "io003",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "Which of the following is an ionic compound?",
+  choices: [
+    "CO₂",
+    "NH₃",
+    "KBr",
+    "CH₄"
+  ],
+  answer: "KBr",
+  explanation: "KBr is formed from potassium (metal) and bromine (nonmetal), making it ionic."
+},
+ 
+{
+  id: "io004",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "Which of the following is a molecular compound?",
+  choices: [
+    "MgCl₂",
+    "LiF",
+    "CO₂",
+    "CaO"
+  ],
+  answer: "CO₂",
+  explanation: "CO₂ is made of two nonmetals bonded covalently — it forms molecules, not an ionic lattice."
+},
+ 
+{
+  id: "io005",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "CaO is best classified as:",
+  choices: [
+    "Molecular",
+    "Ionic",
+    "A pure element",
+    "A gas at room temperature"
+  ],
+  answer: "Ionic",
+  explanation: "Calcium is a metal and oxygen is a nonmetal — CaO forms ionic bonds between Ca²⁺ and O²⁻."
+},
+ 
+{
+  id: "io006",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "CCl₄ is best classified as:",
+  choices: [
+    "Ionic",
+    "Molecular",
+    "A salt",
+    "Metallic"
+  ],
+  answer: "Molecular",
+  explanation: "Carbon and chlorine are both nonmetals — CCl₄ forms covalent bonds and exists as molecules."
+},
+ 
+{
+  id: "io007",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "What type of particles make up an ionic compound?",
+  choices: [
+    "Neutral molecules",
+    "Protons and neutrons",
+    "Positive and negative ions",
+    "Electrons only"
+  ],
+  answer: "Positive and negative ions",
+  explanation: "Ionic compounds consist of oppositely charged ions held together by electrostatic attraction."
+},
+ 
+{
+  id: "io008",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "What type of particles make up a molecular compound?",
+  choices: [
+    "Ions",
+    "Discrete molecules held by covalent bonds",
+    "Metal cations in a sea of electrons",
+    "Protons bonded to neutrons"
+  ],
+  answer: "Discrete molecules held by covalent bonds",
+  explanation: "Molecular compounds consist of atoms sharing electrons in covalent bonds, forming individual molecules."
+},
+ 
+// ionic_vs_molecular — classification/comparison (difficulty 2)
+ 
+{
+  id: "io009",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "Mg(OH)₂ is best classified as:",
+  choices: [
+    "Molecular",
+    "Ionic",
+    "A covalent gas",
+    "A pure metal"
+  ],
+  answer: "Ionic",
+  explanation: "Mg²⁺ is a metal cation; OH⁻ is a polyatomic anion — this compound has ionic bonds holding it together."
+},
+ 
+{
+  id: "io010",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "C₆H₁₂O₆ (glucose) is best classified as:",
+  choices: [
+    "Ionic",
+    "Molecular",
+    "Metallic",
+    "A salt"
+  ],
+  answer: "Molecular",
+  explanation: "Glucose contains only nonmetal atoms (C, H, O) bonded covalently — it is a molecular compound."
+},
+ 
+{
+  id: "io011",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "A compound is formed between a metal and a nonmetal. What type of compound is it most likely to be?",
+  choices: [
+    "Molecular",
+    "Ionic",
+    "Covalent network",
+    "Metallic"
+  ],
+  answer: "Ionic",
+  explanation: "Metal-nonmetal combinations form ionic compounds because the metal loses electrons and the nonmetal gains them."
+},
+ 
+{
+  id: "io012",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "A compound is formed between two nonmetals. What type of compound is it most likely to be?",
+  choices: [
+    "Ionic",
+    "Molecular",
+    "A salt solution",
+    "Metallic"
+  ],
+  answer: "Molecular",
+  explanation: "Two nonmetals share electrons rather than transferring them, producing covalent molecular compounds."
+},
+ 
+{
+  id: "io013",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "AlCl₃ is best classified as:",
+  choices: [
+    "Molecular",
+    "Ionic",
+    "A noble gas compound",
+    "A pure element"
+  ],
+  answer: "Ionic",
+  explanation: "Aluminum is a metal (Al³⁺) and chlorine is a nonmetal (Cl⁻), making AlCl₃ an ionic compound."
+},
+ 
+{
+  id: "io014",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "Which property best distinguishes an ionic compound from a molecular compound?",
+  choices: [
+    "Ionic compounds always have lower melting points",
+    "Ionic compounds are made of ions in a repeating lattice, not discrete molecules",
+    "Molecular compounds always dissolve in water",
+    "Ionic compounds contain only one type of atom"
+  ],
+  answer: "Ionic compounds are made of ions in a repeating lattice, not discrete molecules",
+  explanation: "Ionic compounds form crystal lattices of alternating positive and negative ions. Molecular compounds form individual, discrete molecules."
+},
+ 
+// dissolving_salt — recall and application (difficulty 1–2)
+ 
+{
+  id: "io015",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "What happens to NaCl ions when NaCl dissolves in water?",
+  choices: [
+    "Na⁺ and Cl⁻ ions separate and spread throughout the water",
+    "NaCl molecules float intact on the surface",
+    "Na and Cl atoms share electrons with water",
+    "NaCl breaks into protons and neutrons"
+  ],
+  answer: "Na⁺ and Cl⁻ ions separate and spread throughout the water",
+  explanation: "Polar water molecules surround and pull apart Na⁺ and Cl⁻ ions, dispersing them throughout the solution."
+},
+ 
+{
+  id: "io016",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "What property of water allows it to dissolve ionic compounds?",
+  choices: [
+    "Water is nonpolar",
+    "Water molecules are polar and attract ions",
+    "Water contains dissolved metals",
+    "Water has a high boiling point"
+  ],
+  answer: "Water molecules are polar and attract ions",
+  explanation: "Water's partial positive and negative ends are attracted to the negative and positive ions in the salt crystal, pulling them apart."
+},
+ 
+{
+  id: "io017",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "When NaCl dissolves, water molecules orient around Na⁺ ions with which part facing the ion?",
+  choices: [
+    "The slightly positive hydrogen end",
+    "The slightly negative oxygen end",
+    "The center of the molecule equally",
+    "The nonpolar region"
+  ],
+  answer: "The slightly negative oxygen end",
+  explanation: "The oxygen end of water carries a partial negative charge, which is attracted to the positive Na⁺ ion."
+},
+ 
+{
+  id: "io018",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "Which best describes the process when an ionic solid dissolves in water?",
+  choices: [
+    "Covalent bonds in water are broken to absorb the salt",
+    "Ions at the surface of the crystal are pulled away one by one by polar water molecules",
+    "The entire salt crystal dissolves at once when dropped in water",
+    "Protons from water attach to the salt and pull it apart"
+  ],
+  answer: "Ions at the surface of the crystal are pulled away one by one by polar water molecules",
+  explanation: "Water molecules surround surface ions, overcome the ionic attraction, and draw them into solution — a gradual process starting at the crystal edges."
+},
+ 
+{
+  id: "io019",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "Sugar (C₁₂H₂₂O₁₁) dissolves in water but produces a nonconducting solution. What does this tell you about what dissolved?",
+  choices: [
+    "Sugar must have released ions when it dissolved",
+    "Sugar dissolved as intact neutral molecules, not ions",
+    "Sugar reacted with water to form a new ionic compound",
+    "Sugar transferred electrons to water molecules"
+  ],
+  answer: "Sugar dissolved as intact neutral molecules, not ions",
+  explanation: "Molecular compounds dissolve without releasing ions — the molecules disperse but carry no charge, so no current can flow."
+},
+ 
+{
+  id: "io020",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "A student dissolves two substances in water. Substance A conducts electricity. Substance B does not. What is the most likely difference?",
+  choices: [
+    "Substance A is colored; Substance B is clear",
+    "Substance A released ions when it dissolved; Substance B dissolved as neutral molecules",
+    "Substance A is heavier; Substance B is lighter",
+    "Substance A is colder; Substance B is warmer"
+  ],
+  answer: "Substance A released ions when it dissolved; Substance B dissolved as neutral molecules",
+  explanation: "Conductivity requires mobile charge carriers. Only substance A produced ions — the mobile charged particles needed to carry current."
+},
+ 
+// aqueous_conductivity — recall and application (difficulty 1–2)
+ 
+{
+  id: "io021",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "Why does a saltwater solution conduct electricity?",
+  choices: [
+    "It contains moving ions that carry charge",
+    "It contains moving electrons through the water",
+    "Water molecules carry electrical signals",
+    "Salt makes water denser and more conductive"
+  ],
+  answer: "It contains moving ions that carry charge",
+  explanation: "Dissolved Na⁺ and Cl⁻ ions are mobile and carry charge through the solution when voltage is applied."
+},
+ 
+{
+  id: "io022",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "Pure distilled water is a poor conductor of electricity because:",
+  choices: [
+    "It is too cold",
+    "It contains no mobile charge carriers",
+    "It contains too many ions",
+    "Water molecules block electron flow"
+  ],
+  answer: "It contains no mobile charge carriers",
+  explanation: "Pure water has very few ions. Without mobile charged particles, virtually no current can flow."
+},
+ 
+{
+  id: "io023",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "Which solution would best conduct electricity?",
+  choices: [
+    "Pure water",
+    "Sugar water",
+    "Saltwater",
+    "Distilled water with food coloring"
+  ],
+  answer: "Saltwater",
+  explanation: "Saltwater contains dissolved Na⁺ and Cl⁻ ions that carry charge. The other solutions have no significant ion concentration."
+},
+ 
+{
+  id: "io024",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "A light bulb is connected in a circuit with a beaker of solution. Which substance would cause the bulb to glow brightest?",
+  choices: [
+    "Pure water",
+    "Dissolved sugar",
+    "Dissolved table salt",
+    "Dissolved vegetable oil"
+  ],
+  answer: "Dissolved table salt",
+  explanation: "Table salt (NaCl) produces a high concentration of Na⁺ and Cl⁻ ions, allowing strong current to flow and a bright bulb."
+},
+ 
+{
+  id: "io025",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "A solid NaCl crystal does not conduct electricity. Dissolved NaCl does. What changed?",
+  choices: [
+    "New electrons were created when salt dissolved",
+    "The ions became free to move through the solution",
+    "Water added extra protons to the sodium ions",
+    "The chemical formula of NaCl changed in water"
+  ],
+  answer: "The ions became free to move through the solution",
+  explanation: "In the solid, ions are locked in the crystal lattice. Dissolving frees them to move, allowing charge to flow."
+},
+ 
+{
+  id: "io026",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "As more salt is dissolved in water, conductivity:",
+  choices: [
+    "Decreases because the solution gets crowded",
+    "Stays the same regardless of concentration",
+    "Increases because more ions are available to carry charge",
+    "Increases only until the first gram dissolves"
+  ],
+  answer: "Increases because more ions are available to carry charge",
+  explanation: "More dissolved salt means more Na⁺ and Cl⁻ ions in solution — more charge carriers means greater conductivity."
+},
+ 
+{
+  id: "io027",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "A student tests four liquids for conductivity: tap water, pure water, vinegar, and cooking oil. Which pair is most likely to conduct?",
+  choices: [
+    "Pure water and cooking oil",
+    "Tap water and vinegar",
+    "Cooking oil and pure water",
+    "Cooking oil and vinegar"
+  ],
+  answer: "Tap water and vinegar",
+  explanation: "Tap water contains dissolved mineral ions. Vinegar contains acetic acid that partially ionizes in water. Both have mobile ions; oil and pure water do not."
+},
+ 
+// conductors_insulators — application (difficulty 2)
+ 
+{
+  id: "io028",
+  mode: "ionic-survival",
+  topic: "conductors_insulators",
+  difficulty: 1,
+  type: "multiple_choice",
+  prompt: "A conductor is a material that:",
+  choices: [
+    "Prevents all charge movement",
+    "Allows charge to move freely through it",
+    "Creates new electrons when heated",
+    "Only conducts light, not electricity"
+  ],
+  answer: "Allows charge to move freely through it",
+  explanation: "Conductors have mobile charge carriers — electrons in metals, ions in solutions — that allow current to flow."
+},
+ 
+{
+  id: "io029",
+  mode: "ionic-survival",
+  topic: "conductors_insulators",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "An ionic compound is melted (molten). Would it conduct electricity?",
+  choices: [
+    "No — melting destroys the ions",
+    "Yes — melting frees the ions to move",
+    "No — only water can free ionic charges",
+    "Yes — but only if it is also dissolved in water"
+  ],
+  answer: "Yes — melting frees the ions to move",
+  explanation: "In the molten state, ions escape the rigid lattice and become mobile — just like in solution, they can carry current."
+},
+ 
+{
+  id: "io030",
+  mode: "ionic-survival",
+  topic: "conductors_insulators",
+  difficulty: 2,
+  type: "multiple_choice",
+  prompt: "Why are ionic solids poor conductors even though they contain ions?",
+  choices: [
+    "The ions are the wrong charge",
+    "The ions are locked in a rigid crystal lattice and cannot move",
+    "Ionic solids contain too few particles to conduct",
+    "The ions cancel each other out in the solid state"
+  ],
+  answer: "The ions are locked in a rigid crystal lattice and cannot move",
+  explanation: "Conductivity requires mobile charge carriers. In the solid state, ions are fixed in place by strong lattice forces and cannot move to carry current."
+  }
 ],
 bossQuestions:[
- ]};
+{
+  id: "iob01",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 3,
+  type: "multiple_choice",
+  prompt: "Boss: Solid NaCl does not conduct electricity. Molten NaCl does. Dissolved NaCl does. What single factor explains both conducting cases but not the solid?",
+  choices: [
+    "Heat destroys the ionic bonds in both cases",
+    "Water adds extra electrons in both conducting cases",
+    "In both conducting cases, ions are free to move — in the solid they are not",
+    "The chemical formula changes in molten and dissolved states"
+  ],
+  answer: "In both conducting cases, ions are free to move — in the solid they are not",
+  explanation: "The lattice locks ions in place, preventing current. Melting and dissolving both break the lattice constraints, freeing Na⁺ and Cl⁻ to move and carry charge. The ions themselves are unchanged — only their mobility differs."
+},
+ 
+{
+  id: "iob02",
+  mode: "ionic-survival",
+  topic: "aqueous_conductivity",
+  difficulty: 3,
+  type: "multiple_choice",
+  prompt: "Boss: A student dissolves equal masses of NaCl and C₁₂H₂₂O₁₁ (glucose) in separate beakers of water. She predicts both solutions will conduct equally because 'the same mass dissolved.' What is wrong with this prediction?",
+  choices: [
+    "It is correct — equal mass always produces equal conductivity",
+    "NaCl solution conducts because it releases ions; glucose dissolves as neutral molecules and produces no ions",
+    "Glucose conducts better because its molecules are larger",
+    "Both solutions are equally nonconducting because water is a poor conductor"
+  ],
+  answer: "NaCl solution conducts because it releases ions; glucose dissolves as neutral molecules and produces no ions",
+  explanation: "Conductivity depends on mobile ions, not dissolved mass. NaCl dissociates into Na⁺ and Cl⁻ — mobile charge carriers. Glucose molecules dissolve intact and carry no charge. Mass dissolved tells you nothing about ion concentration."
+},
+ 
+{
+  id: "iob03",
+  mode: "ionic-survival",
+  topic: "ionic_vs_molecular",
+  difficulty: 3,
+  type: "multiple_choice",
+  prompt: "Boss: Two unknown white solids both dissolve completely in water. Solid A's solution conducts electricity strongly. Solid B's solution does not conduct. Which conclusion is best supported?",
+  choices: [
+    "Solid A is ionic and released ions; Solid B is likely molecular and dissolved without releasing ions",
+    "Both solids are ionic because they both dissolved",
+    "Solid B is ionic because nonconducting solutions are safer",
+    "Solid A must contain more atoms per formula unit than Solid B"
+  ],
+  answer: "Solid A is ionic and released ions; Solid B is likely molecular and dissolved without releasing ions",
+  explanation: "Dissolving alone does not distinguish ionic from molecular — both can dissolve in water. Conductivity reveals whether ions were released. Strong conductivity indicates ions present; no conductivity indicates neutral molecules dissolved."
+},
+ 
+{
+  id: "iob04",
+  mode: "ionic-survival",
+  topic: "dissolving_salt",
+  difficulty: 3,
+  type: "multiple_choice",
+  prompt: "Boss: At the particle level, explain why ionic compounds dissolve more readily in polar solvents like water than in nonpolar solvents like oil.",
+  choices: [
+    "Polar solvents are denser and physically crush the crystal apart",
+    "Polar water molecules have partial charges that attract and surround individual ions, overcoming the lattice attraction",
+    "Nonpolar solvents have stronger bonds that block ion movement",
+    "Oil is too thick for ions to move through, but the chemistry is the same"
+  ],
+  answer: "Polar water molecules have partial charges that attract and surround individual ions, overcoming the lattice attraction",
+  explanation: "The partial charges on water molecules (partial-negative oxygen, partial-positive hydrogen) interact with the charged ions at the crystal surface. These interactions release enough energy to pull ions away from the lattice. Nonpolar solvents have no partial charges and cannot interact strongly with ions."
+},
+ 
+{
+  id: "iob05",
+  mode: "ionic-survival",
+  topic: "electron_transfer",
+  difficulty: 3,
+  type: "multiple_choice",
+  prompt: "Boss: A student says ionic and covalent bonds are the same because 'electrons are always involved.' What is the key difference in how electrons behave in each?",
+  choices: [
+    "Ionic bonds involve electron sharing; covalent bonds involve electron transfer",
+    "Covalent bonds involve electron transfer; ionic bonds involve electron sharing",
+    "In ionic bonding, electrons are fully transferred from metal to nonmetal; in covalent bonding, electrons are shared between nonmetals",
+    "There is no difference — electrons always move the same way in all bonds"
+  ],
+  answer: "In ionic bonding, electrons are fully transferred from metal to nonmetal; in covalent bonding, electrons are shared between nonmetals",
+  explanation: "The student is right that electrons are always involved, but the mechanism differs fundamentally. Ionic bonding involves complete electron transfer, producing ions held by attraction. Covalent bonding involves shared electron pairs — no full transfer, no ions formed."
+},
+ 
+{
+  id: "iob06",
+  mode: "ionic-survival",
+  topic: "conductors_insulators",
+  difficulty: 3,
+  type: "multiple_choice",
+  prompt: "Boss: Copper wire conducts electricity as a solid. NaCl solution conducts electricity as a liquid. A student claims both conduct for the same reason. Evaluate this claim.",
+  choices: [
+    "Correct — both conduct because electrons move freely in both cases",
+    "Partially correct — both have mobile charge carriers, but copper conducts via free electrons while NaCl solution conducts via mobile ions",
+    "Incorrect — NaCl solution conducts via electrons just like copper",
+    "Incorrect — copper conducts via ions and NaCl solution conducts via electrons"
+  ],
+  answer: "Partially correct — both have mobile charge carriers, but copper conducts via free electrons while NaCl solution conducts via mobile ions",
+  explanation: "The student correctly identifies that conductivity requires mobile charge carriers in both cases. However, the carriers differ: copper's metallic bonding provides a sea of delocalized electrons; NaCl solution provides free Na⁺ and Cl⁻ ions. Same principle — mobile charge carriers — different particles doing the carrying."
+  }
+]
+};
 
 const lightningBuilderMode = {
 id:"lightning-builder",
@@ -1300,13 +1909,55 @@ bossQuestions:[
 let MODES=[chargeClashMode,coulombChaosMode,ionicSurvivalMode,lightningBuilderMode];
 
 let currentMode=null, currentQuestion=null, usedIds=[], answered=false, isBoss=false;
-let total=0, correct=0, streak=0, bossCorrect=0, bossTotal=0, questionCount=0;
+let total=0, correct=0, streak=0, bestStreak=0, bossCorrect=0, bossTotal=0, questionCount=0;
 let topicStats={};
 
 function init(){
   Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0,recovered:false});
   renderModes();
 }
+
+function getModeRecord(modeId){
+  const records = JSON.parse(localStorage.getItem("chemReviewRecords") || "{}");
+
+  return records[modeId] || {
+    bestScore: 0,
+    bestTotal: 0,
+    bestPercent: 0,
+    bestStreak: 0,
+    bossCorrect: 0,
+    bossTotal: 0
+  };
+}
+
+function saveModeRecord(modeId,score,total,streak,bossCorrect,bossTotal){
+  if(!modeId || total === 0) return;
+
+  const records = JSON.parse(localStorage.getItem("chemReviewRecords") || "{}");
+
+  const old = records[modeId] || {
+    bestScore: 0,
+    bestTotal: 0,
+    bestPercent: 0,
+    bestStreak: 0,
+    bossCorrect: 0,
+    bossTotal: 0
+  };
+
+  const percent = total ? Math.round((score / total) * 100) : 0;
+
+  records[modeId] = {
+    bestScore: percent > old.bestPercent ? score : old.bestScore,
+    bestTotal: percent > old.bestPercent ? total : old.bestTotal,
+    bestPercent: Math.max(percent, old.bestPercent || 0),
+    bestStreak: Math.max(streak, old.bestStreak || 0),
+    bossCorrect: Math.max(bossCorrect, old.bossCorrect || 0),
+    bossTotal: Math.max(bossTotal, old.bossTotal || 0)
+  };
+
+  localStorage.setItem("chemReviewRecords", JSON.stringify(records));
+}
+ 
 function renderModes(){
   const grid=document.getElementById("modeGrid");
   grid.innerHTML="";
@@ -1314,13 +1965,25 @@ function renderModes(){
     const div=document.createElement("div");
     div.className="mode-card";
     div.onclick=()=>startMode(m.id);
-    div.innerHTML=`<h2>${m.title}</h2><p>${m.subtitle}</p><p style="margin-top:10px;color:var(--green);font-weight:800">${m.questions.length} questions + ${m.bossQuestions.length} boss levels</p>`;
+
+    const record=getModeRecord(m.id);
+
+    div.innerHTML=`
+      <h2>${m.title}</h2>
+      <p>${m.subtitle}</p>
+      <p style="margin-top:10px;color:var(--green);font-weight:800">
+        ${m.questions.length} questions + ${m.bossQuestions.length} boss levels
+      </p>
+      <p style="margin-top:8px;color:var(--gold);font-weight:800">
+        Browser Record: ${record.bestScore}/${record.bestTotal} (${record.bestPercent}%) | Best Streak: ${record.bestStreak}
+      </p>
+    `
     grid.appendChild(div);
   });
 }
 function startMode(id){
   currentMode=MODES.find(m=>m.id===id);
-  total=0;correct=0;streak=0;bossCorrect=0;bossTotal=0;questionCount=0;usedIds=[];answered=false;
+  total=0;correct=0;streak=0;bestStreak=0;bossCorrect=0;bossTotal=0;questionCount=0;usedIds=[];answered=false;
   Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0,recovered:false});  
   document.getElementById("currentModeLabel").textContent=currentMode.title;
   show("gameScreen");
@@ -1331,9 +1994,20 @@ function show(id){
   document.getElementById(id).classList.add("active");
 }
 function goMenu(){
+  if(currentMode){
+  saveModeRecord(
+    currentMode.id,
+    correct,
+    total,
+    bestStreak,
+    bossCorrect,
+    bossTotal
+    );
+  }
   document.getElementById("currentModeLabel").textContent="Choose a mode";
   updatePills();
   show("menuScreen");
+  renderModes();
 }
 function chooseQuestion(){
   questionCount++;
@@ -1400,7 +2074,8 @@ function answer(choice,btn){
   const right=choice===currentQuestion.answer;
   topicStats[currentQuestion.topic].seen++;
   if(right){
-    correct++; streak++;
+    correct++; streak++; 
+    bestStreak=Math.max(bestStreak,streak);
     topicStats[currentQuestion.topic].correct++;
     topicStats[currentQuestion.topic].weakness=Math.max(0,topicStats[currentQuestion.topic].weakness-1);
 
@@ -1439,6 +2114,7 @@ function getWeakestTopic(){
 }
 function finalReport(){
   const strong=[], almost=[], weak=[];
+  saveModeRecord(currentMode.id,correct,total,bestStreak,bossCorrect,bossTotal);
   Object.entries(topicStats).forEach(([t,s])=>{
     if(s.seen===0)return;
     const pct=s.correct/s.seen;

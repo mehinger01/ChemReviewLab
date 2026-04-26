@@ -1977,6 +1977,16 @@ function show(id){
   document.getElementById(id).classList.add("active");
 }
 function goMenu(){
+  if(currentMode){
+  saveModeRecord(
+    currentMode.id,
+    correct,
+    total,
+    bestStreak,
+    bossCorrect,
+    bossTotal
+    );
+  }
   document.getElementById("currentModeLabel").textContent="Choose a mode";
   updatePills();
   show("menuScreen");

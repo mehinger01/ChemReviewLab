@@ -167,18 +167,629 @@ title:"Coulomb Chaos",
 subtitle:"Predict how charge amount and distance change electrostatic force.",
 topics:["coulombs_law","charge_interactions"],
 questions:[
-{id:"co001",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:1,type:"multiple_choice",prompt:"Two charged objects move farther apart. What happens to the electrostatic force?",choices:["It gets weaker","It gets stronger","It stays exactly the same","It becomes gravity"],answer:"It gets weaker",explanation:"Electrostatic force decreases as distance increases."},
-{id:"co002",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:1,type:"multiple_choice",prompt:"Two objects have larger charges. What happens to the force between them if distance stays the same?",choices:["Force increases","Force decreases","Force disappears","Distance becomes zero"],answer:"Force increases",explanation:"Greater charge magnitude creates a stronger electrostatic force."},
-{id:"co003",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:2,type:"multiple_choice",prompt:"Which situation has the strongest force?",choices:["Small charges far apart","Large charges close together","Small charges close together","Large charges far apart"],answer:"Large charges close together",explanation:"Force is strongest with larger charges and shorter distance."},
-{id:"co004",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:2,type:"multiple_choice",prompt:"In Coulomb’s law, distance has a powerful effect because it is...",choices:["squared in the denominator","added to the charge","always zero","measured in grams"],answer:"squared in the denominator",explanation:"Because distance is squared in the denominator, increasing distance greatly reduces force."},
-{id:"co005",mode:"coulomb-chaos",topic:"charge_interactions",difficulty:1,type:"multiple_choice",prompt:"Coulomb’s law can describe attraction or repulsion between...",choices:["charged objects","only neutral objects","only liquids","only sound waves"],answer:"charged objects",explanation:"Coulomb’s law predicts electrostatic force between charges."},
-{id:"co006",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:2,type:"multiple_choice",prompt:"If the distance between charges doubles, the force becomes...",choices:["about one-fourth as strong","twice as strong","exactly the same","four times stronger"],answer:"about one-fourth as strong",explanation:"Force follows an inverse-square relationship with distance."},
-{id:"co007",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:2,type:"multiple_choice",prompt:"If one charge doubles and distance stays the same, the force...",choices:["doubles","is cut in half","becomes zero","becomes neutral"],answer:"doubles",explanation:"Force is proportional to the size of each charge."},
-{id:"co008",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:2,type:"multiple_choice",prompt:"Why can lightning involve huge forces compared with classroom static?",choices:["Storm clouds build up massive amounts of charge","Air is always metal","Clouds have no electrons","Distance never matters"],answer:"Storm clouds build up massive amounts of charge",explanation:"Large charge buildup in clouds can create strong electric fields and forces."}
-],
+ {
+    id: "co001",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "A positive charge and a negative charge are placed near each other. What happens?",
+    choices: [
+      "They attract each other",
+      "They repel each other",
+      "Nothing happens",
+      "They become neutral"
+    ],
+    answer: "They attract each other",
+    explanation: "Opposite charges attract. Positive and negative pull toward each other."
+  },
+ 
+  {
+    id: "co002",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Two positively charged objects are placed near each other. What happens?",
+    choices: [
+      "They attract",
+      "They repel",
+      "They become neutral",
+      "They transfer electrons"
+    ],
+    answer: "They repel",
+    explanation: "Like charges repel. Two positive objects push away from each other."
+  },
+ 
+  {
+    id: "co003",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Two negatively charged objects are placed near each other. What happens?",
+    choices: [
+      "They attract",
+      "They repel",
+      "They become positive",
+      "No force acts between them"
+    ],
+    answer: "They repel",
+    explanation: "Like charges repel. Two negative objects push away from each other."
+  },
+ 
+  {
+    id: "co004",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Electrostatic force acts between objects that are:",
+    choices: [
+      "only touching",
+      "separated by charged particles",
+      "electrically charged",
+      "made of metal only"
+    ],
+    answer: "electrically charged",
+    explanation: "Coulomb's law describes force between objects that carry electric charge."
+  },
+ 
+  {
+    id: "co005",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Which describes an attractive electrostatic force?",
+    choices: [
+      "Positive near positive",
+      "Negative near negative",
+      "Positive near negative",
+      "Neutral near neutral"
+    ],
+    answer: "Positive near negative",
+    explanation: "Opposite charges attract — a positive and negative object pull toward each other."
+  },
+ 
+  // ── COULOMB'S LAW — distance effect (difficulty 1–2) ──────
+ 
+  {
+    id: "co006",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Two charged objects move farther apart. What happens to the electrostatic force?",
+    choices: [
+      "It gets weaker",
+      "It gets stronger",
+      "It stays the same",
+      "It becomes gravitational"
+    ],
+    answer: "It gets weaker",
+    explanation: "Electrostatic force decreases as distance increases."
+  },
+ 
+  {
+    id: "co007",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Two charged objects move closer together. What happens to the electrostatic force?",
+    choices: [
+      "It gets weaker",
+      "It gets stronger",
+      "It stays the same",
+      "It reverses direction"
+    ],
+    answer: "It gets stronger",
+    explanation: "Electrostatic force increases as distance decreases."
+  },
+ 
+  {
+    id: "co008",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "If the distance between two charges doubles, what happens to the force?",
+    choices: [
+      "It doubles",
+      "It is cut in half",
+      "It becomes one-fourth as strong",
+      "It becomes four times stronger"
+    ],
+    answer: "It becomes one-fourth as strong",
+    explanation: "Force follows an inverse-square law. Double the distance means force drops by 2² = 4."
+  },
+ 
+  {
+    id: "co009",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "If the distance between two charges is cut in half, the force becomes:",
+    choices: [
+      "twice as strong",
+      "four times stronger",
+      "half as strong",
+      "one-fourth as strong"
+    ],
+    answer: "four times stronger",
+    explanation: "Halving distance means force increases by 2² = 4. The inverse-square law cuts both ways."
+  },
+ 
+  {
+    id: "co010",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "In Coulomb's law, distance appears in the denominator and is squared. What does this tell you?",
+    choices: [
+      "Distance has a small effect on force",
+      "Distance has a larger effect than charge size",
+      "Even small increases in distance can sharply reduce force",
+      "Distance only matters when charges are equal"
+    ],
+    answer: "Even small increases in distance can sharply reduce force",
+    explanation: "Squaring the distance in the denominator means the force weakens rapidly — even moderate separation strongly reduces the interaction."
+  },
+ 
+  {
+    id: "co011",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Two charges are 1 m apart with a force of 9 N. They are moved to 3 m apart. What is the new force?",
+    choices: [
+      "3 N",
+      "1 N",
+      "27 N",
+      "81 N"
+    ],
+    answer: "1 N",
+    explanation: "Distance tripled, so force is divided by 3² = 9. 9 N ÷ 9 = 1 N."
+  },
+ 
+  // ── COULOMB'S LAW — charge magnitude effect (difficulty 1–2)
+ 
+  {
+    id: "co012",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Two objects have larger charges. Distance stays the same. What happens to the force?",
+    choices: [
+      "Force increases",
+      "Force decreases",
+      "Force disappears",
+      "Force reverses"
+    ],
+    answer: "Force increases",
+    explanation: "Greater charge magnitude creates a stronger electrostatic force."
+  },
+ 
+  {
+    id: "co013",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "One charge is doubled. Distance stays the same. What happens to the force?",
+    choices: [
+      "Force doubles",
+      "Force is cut in half",
+      "Force quadruples",
+      "Force stays the same"
+    ],
+    answer: "Force doubles",
+    explanation: "Force is directly proportional to each charge. Double one charge, double the force."
+  },
+ 
+  {
+    id: "co014",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Both charges are doubled. Distance stays the same. What happens to the force?",
+    choices: [
+      "Force doubles",
+      "Force quadruples",
+      "Force is cut in half",
+      "Force stays the same"
+    ],
+    answer: "Force quadruples",
+    explanation: "Force is proportional to both charges. Double both means 2 × 2 = 4 times the force."
+  },
+ 
+  {
+    id: "co015",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "One charge is tripled. The other is unchanged. Distance is unchanged. The force is now:",
+    choices: [
+      "six times stronger",
+      "three times stronger",
+      "one-third as strong",
+      "nine times stronger"
+    ],
+    answer: "three times stronger",
+    explanation: "Force scales linearly with each charge. Tripling one charge triples the force."
+  },
+ 
+  // ── COMPARING SITUATIONS (difficulty 2) ──────────────────
+ 
+  {
+    id: "co016",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Which situation produces the strongest electrostatic force?",
+    choices: [
+      "Small charges far apart",
+      "Large charges close together",
+      "Small charges close together",
+      "Large charges far apart"
+    ],
+    answer: "Large charges close together",
+    explanation: "Force is greatest when charge is large and distance is small."
+  },
+ 
+  {
+    id: "co017",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Which situation produces the weakest electrostatic force?",
+    choices: [
+      "Large charges close together",
+      "Small charges close together",
+      "Large charges far apart",
+      "Small charges far apart"
+    ],
+    answer: "Small charges far apart",
+    explanation: "Weak charges and large distance both reduce force — combined, they produce the smallest interaction."
+  },
+ 
+  {
+    id: "co018",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Object A has charge 2q at distance r. Object B has charge q at distance 2r. Which has stronger force with the same opposite charge?",
+    choices: [
+      "Object A",
+      "Object B",
+      "They are equal",
+      "Cannot be determined"
+    ],
+    answer: "Object A",
+    explanation: "Object A: force ∝ 2q/r². Object B: force ∝ q/(2r)² = q/4r². Object A's force is 8 times larger."
+  },
+ 
+  // ── REAL-WORLD APPLICATION (difficulty 2) ────────────────
+ 
+  {
+    id: "co019",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Why can lightning involve much stronger forces than classroom static electricity demonstrations?",
+    choices: [
+      "Storm clouds build up far greater amounts of charge",
+      "Air becomes a metal during storms",
+      "Clouds have no electrons",
+      "Distance never affects lightning force"
+    ],
+    answer: "Storm clouds build up far greater amounts of charge",
+    explanation: "Coulomb's law shows force scales with charge. Massive charge buildup in storm clouds produces far stronger electrostatic forces than small lab demonstrations."
+  },
+ 
+  {
+    id: "co020",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "A lightning rod works in part because it is tall. How does height relate to Coulomb's law?",
+    choices: [
+      "Height increases charge on the rod",
+      "Height reduces the distance between the rod tip and charged cloud, increasing force",
+      "Height makes the rod a better insulator",
+      "Height has no connection to electrostatic force"
+    ],
+    answer: "Height reduces the distance between the rod tip and charged cloud, increasing force",
+    explanation: "Shorter distance means stronger attractive force between opposite charges. A tall rod narrows the gap to the cloud, making connection more likely."
+  },
+ 
+  {
+    id: "co021",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "A charged balloon clings to a wall. As it slowly slides down and farther from its original position, what happens to the attraction?",
+    choices: [
+      "It increases as the balloon descends",
+      "It decreases as distance from the induced charge region increases",
+      "It stays exactly the same",
+      "It reverses and becomes repulsion"
+    ],
+    answer: "It decreases as distance from the induced charge region increases",
+    explanation: "As the balloon moves away from the region of induced surface charge, the electrostatic force weakens with increasing distance."
+  },
+ 
+  {
+    id: "co022",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Two identically charged spheres are moved apart until the force between them is negligible. What changed?",
+    choices: [
+      "Their charges decreased",
+      "Their masses increased",
+      "The distance between them increased significantly",
+      "They became neutral"
+    ],
+    answer: "The distance between them increased significantly",
+    explanation: "Charge did not change — distance did. The inverse-square relationship means large enough separation reduces force to near zero."
+  },
+ 
+  {
+    id: "co023",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "An electron and a proton in an atom are extremely close together. What does Coulomb's law predict about their attraction?",
+    choices: [
+      "Very weak, because particles are tiny",
+      "Very strong, because the distance is extremely small",
+      "Zero, because they are inside the atom",
+      "Repulsive, because they are different sizes"
+    ],
+    answer: "Very strong, because the distance is extremely small",
+    explanation: "Coulomb's law predicts force increases sharply as distance decreases. The tiny separation inside atoms produces very strong electrostatic attraction."
+  },
+ 
+  {
+    id: "co024",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Two charged objects have a force of 4 N between them. The charge on one object is halved. What is the new force?",
+    choices: [
+      "8 N",
+      "2 N",
+      "1 N",
+      "16 N"
+    ],
+    answer: "2 N",
+    explanation: "Force is proportional to each charge. Halving one charge halves the force. 4 N ÷ 2 = 2 N."
+  },
+ 
+  // ── CONCEPTUAL / ANALYSIS (difficulty 2–3) ────────────────
+ 
+  {
+    id: "co025",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Coulomb's law and Newton's law of gravity have a similar mathematical structure. What do they share?",
+    choices: [
+      "Both involve mass only",
+      "Both use an inverse-square relationship with distance",
+      "Both only apply to large objects",
+      "Both require objects to be touching"
+    ],
+    answer: "Both use an inverse-square relationship with distance",
+    explanation: "Both Coulomb's law and gravity show force decreasing with the square of distance, making them inverse-square laws."
+  },
+ 
+  {
+    id: "co026",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Object A is positive. Object B is neutral. Object C is negative. Which pair has the strongest direct electrostatic attraction?",
+    choices: [
+      "A and B",
+      "A and C",
+      "B and C",
+      "All pairs attract equally"
+    ],
+    answer: "A and C",
+    explanation: "A direct attractive force requires opposite charges. A (positive) and C (negative) attract directly. B is neutral and only interacts weakly through induction."
+  },
+ 
+  {
+    id: "co027",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Two charges produce a repulsive force of 16 N. Their distance is tripled. What is the new force?",
+    choices: [
+      "48 N",
+      "5.3 N",
+      "1.78 N",
+      "144 N"
+    ],
+    answer: "1.78 N",
+    explanation: "Distance tripled means force drops by 3² = 9. 16 N ÷ 9 ≈ 1.78 N. The force is still repulsive — only the magnitude changes."
+  },
+ 
+  {
+    id: "co028",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "A student says: 'If I double the distance, I double the force.' What is wrong with this statement?",
+    choices: [
+      "Nothing — doubling distance doubles force",
+      "Doubling distance makes force four times stronger",
+      "Doubling distance makes force one-fourth as strong, not half",
+      "Distance has no effect on force"
+    ],
+    answer: "Doubling distance makes force one-fourth as strong, not half",
+    explanation: "Force follows an inverse-square law. Doubling distance reduces force by 2² = 4, not by 2."
+  },
+ 
+  {
+    id: "co029",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "The electrostatic force between two charges is attractive. What do we know about those charges?",
+    choices: [
+      "Both are positive",
+      "Both are negative",
+      "They have opposite signs",
+      "Both are neutral"
+    ],
+    answer: "They have opposite signs",
+    explanation: "Attractive electrostatic force only occurs between charges of opposite sign — one positive and one negative."
+  },
+ 
+  {
+    id: "co030",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "Which change would increase the force between two charges the most?",
+    choices: [
+      "Doubling one charge",
+      "Doubling both charges",
+      "Halving the distance between them",
+      "Doubling both charges and halving the distance"
+    ],
+    answer: "Doubling both charges and halving the distance",
+    explanation: "Doubling both charges multiplies force by 4. Halving distance multiplies force by 4 more. Combined: 4 × 4 = 16 times the original force."
+  }
+  
+  ],
 bossQuestions:[
-{id:"cob01",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:3,type:"multiple_choice",prompt:"Boss: Two lightning paths are possible. Path A is shorter but has less charge separation. Path B is longer but has much more charge buildup. What should you consider?",choices:["Both charge amount and distance affect force","Only distance matters","Only color matters","Only temperature matters"],answer:"Both charge amount and distance affect force",explanation:"Coulomb’s law connects force to charge amount and distance. Stronger charge can matter, but greater distance weakens force."},
-{id:"cob02",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:3,type:"multiple_choice",prompt:"Boss: Why does moving charged objects farther apart quickly weaken their interaction?",choices:["Force decreases with the square of distance","Electrons become protons","Charges stop existing","Objects become molecular"],answer:"Force decreases with the square of distance",explanation:"The inverse-square distance relationship means even modest increases in distance can greatly reduce force."}
+{
+    id: "cob01",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: Two lightning paths are possible. Path A: short distance, weak charge. Path B: long distance, much larger charge. A student says Path B must have more force because the charge is bigger. Is this correct?",
+    choices: [
+      "Yes — charge is the only factor in Coulomb's law",
+      "No — both charge and distance affect force, and the squared distance effect may dominate",
+      "Yes — distance does not affect lightning",
+      "No — only distance matters for lightning"
+    ],
+    answer: "No — both charge and distance affect force, and the squared distance effect may dominate",
+    explanation: "Coulomb's law requires considering both charge and distance. Because distance is squared in the denominator, even a large charge advantage can be offset by a large distance. You cannot determine the stronger force from charge alone."
+  },
+ 
+  {
+    id: "cob02",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A student says 'Doubling the distance weakens force by half, so halving the distance doubles force.' Identify the error.",
+    choices: [
+      "There is no error — both statements are correct",
+      "The error is that distance has no effect on force",
+      "The error is that both effects involve squaring — doubling distance reduces force by 4×, halving distance increases force by 4×",
+      "The error is that only increasing distance affects force"
+    ],
+    answer: "The error is that both effects involve squaring — doubling distance reduces force by 4×, halving distance increases force by 4×",
+    explanation: "Force follows an inverse-square law. The factor is always distance², not distance. The student applied a linear model to a squared relationship in both directions."
+  },
+ 
+  {
+    id: "cob03",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A neutral metal sphere is placed between a positive and a negative charge. Which best describes what happens inside the sphere at the particle level?",
+    choices: [
+      "Nothing — the sphere is neutral so no forces act on it",
+      "Electrons in the sphere shift toward the positive charge, making that side negative and the far side positive",
+      "Protons move through the sphere toward the negative charge",
+      "The sphere splits into two separate charges"
+    ],
+    answer: "Electrons in the sphere shift toward the positive charge, making that side negative and the far side positive",
+    explanation: "The positive charge attracts electrons in the conductor; the negative charge repels them. Electrons redistribute: the near side (facing positive) becomes negative, the far side becomes positive. This is induction — no charge is transferred, but the internal distribution shifts."
+  },
+ 
+  {
+    id: "cob04",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A student claims that if you keep increasing charge on two objects, the force will always keep increasing indefinitely. Is there anything Coulomb's law alone doesn't tell you that matters here?",
+    choices: [
+      "No — Coulomb's law is complete and force will always increase with charge",
+      "Yes — at very high charge, objects discharge into the surrounding air before force can increase further",
+      "Yes — gravity eventually cancels electrostatic force at large charges",
+      "No — charge and distance are the only relevant variables ever"
+    ],
+    answer: "Yes — at very high charge, objects discharge into the surrounding air before force can increase further",
+    explanation: "Coulomb's law is mathematically correct, but in reality large charge buildup ionizes the surrounding air, allowing discharge before force can grow indefinitely. Real systems have limits Coulomb's law does not model — this is how lightning itself happens."
+  },
+ 
+  {
+    id: "cob05",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: Charge A = +4q, Charge B = −q, distance = r. Charge C = +2q, Charge D = −2q, distance = 2r. Which pair has greater attractive force, and why?",
+    choices: [
+      "A and B, because their charges multiply to a larger product at a shorter distance",
+      "C and D, because both charges are equal in magnitude",
+      "They are equal because charge products are the same",
+      "C and D, because having equal charges always produces more force"
+    ],
+    answer: "A and B, because their charges multiply to a larger product at a shorter distance",
+    explanation: "Force ∝ (q₁ × q₂) / r². A&B: (4q × q) / r² = 4q²/r². C&D: (2q × 2q) / (2r)² = 4q²/4r² = q²/r². A&B's force is 4 times greater. The squared distance for C&D overwhelms the charge advantage."
+  },
+ 
+  {
+    id: "cob06",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A student says neutral objects never feel any force from charged objects because they have no net charge. What is wrong with this model?",
+    choices: [
+      "Nothing — neutral objects truly feel no electrostatic force",
+      "Neutral objects can be polarized, shifting internal charges so that the closer side is attracted more strongly than the farther side is repelled",
+      "Neutral objects always repel charged objects",
+      "The student is correct because Coulomb's law only applies to charged objects"
+    ],
+    answer: "Neutral objects can be polarized, shifting internal charges so that the closer side is attracted more strongly than the farther side is repelled",
+    explanation: "When a charged object is near a neutral one, it induces a charge shift. The near side of the neutral object develops opposite charge (closer, stronger attraction) and the far side develops like charge (farther, weaker repulsion). The net result is a weak but real attraction. This is why charged balloons stick to neutral walls."
+  }
 ]};
 
 const ionicSurvivalMode = {
@@ -199,9 +810,7 @@ questions:[
 {id:"io010",mode:"ionic-survival",topic:"ionic_vs_molecular",difficulty:2,type:"multiple_choice",prompt:"C₆H₁₂O₆ is best classified as...",choices:["Molecular","Ionic","Metallic","Ionized air"],answer:"Molecular",explanation:"Glucose is made of nonmetal atoms bonded as molecules."}
 ],
 bossQuestions:[
-{id:"iob01",mode:"ionic-survival",topic:"dissolving_salt",difficulty:3,type:"multiple_choice",prompt:"Boss: Which model best shows NaCl dissolving in water?",choices:["Na⁺ and Cl⁻ ions separated and surrounded by water molecules","Whole NaCl blocks floating unchanged forever","Protons leaving sodium nuclei","Water turning into lightning"],answer:"Na⁺ and Cl⁻ ions separated and surrounded by water molecules",explanation:"Dissolving ionic compounds means ions separate and become surrounded by polar water molecules."},
-{id:"iob02",mode:"ionic-survival",topic:"aqueous_conductivity",difficulty:3,type:"multiple_choice",prompt:"Boss: Why are aqueous ionic compounds often conductive?",choices:["Their dissolved ions can move and carry charge","Their molecules become neutrons","Their protons leave the nucleus","Their water disappears"],answer:"Their dissolved ions can move and carry charge",explanation:"Mobile ions in solution allow electric charge to flow."}
-]};
+ ]};
 
 const lightningBuilderMode = {
 id:"lightning-builder",
@@ -547,11 +1156,146 @@ questions:[
     ],
     answer: "electric discharge",
     explanation: "A spark occurs when charge rapidly moves through air."
-  }
+    }
 ],
 bossQuestions:[
-{id:"lbb01",mode:"lightning-builder",topic:"lightning_formation",difficulty:3,type:"multiple_choice",prompt:"Boss: What sequence best explains cloud-to-ground lightning?",choices:["Charge separates, air ionizes, a path connects, electrons rapidly move","Salt dissolves, sugar forms, paper burns, protons vanish","Water freezes, neutrons move, carbon bonds, light stops","Ground becomes molecular, clouds disappear, air becomes metal"],answer:"Charge separates, air ionizes, a path connects, electrons rapidly move",explanation:"Lightning requires charge separation, ionized air pathways, and rapid charge movement through the connected path."}
-]};
+     {
+      id: "lb_boss_001",
+      mode: "lightning-builder",
+      topic: "lightning_formation",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A student says: 'Lightning is electricity falling straight down from a cloud.' Identify the most significant flaw in this model.",
+      choices: [
+        "Lightning is not electricity — it is ionized plasma with no charge transfer",
+        "The model ignores charge separation, the invisible stepped leader, and the return stroke that travels upward",
+        "The model is correct; all lightning movement is downward",
+        "The flaw is that electricity can only travel through wires, not open air"
+      ],
+      answer: "The model ignores charge separation, the invisible stepped leader, and the return stroke that travels upward",
+      explanation: "Lightning requires charge separation inside the cloud, an invisible stepped leader ionizing a path downward, and then a powerful return stroke rushing upward. The visible flash actually travels upward, not downward. The model is missing the mechanism and the direction of the visible event."
+    },
+ 
+    {
+      id: "lb_boss_002",
+      mode: "lightning-builder",
+      topic: "lightning_formation",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "During cloud charge separation, why are electrons transferred rather than protons?",
+      choices: [
+        "Protons transfer from ice to water droplets because they are smaller than electrons",
+        "Only electrons transfer because protons are locked inside nuclei and cannot move between particles",
+        "Neutrons move from water droplets to ice crystals due to gravity",
+        "Whole atoms transfer between cloud particles during high-speed collisions"
+      ],
+      answer: "Only electrons transfer because protons are locked inside nuclei and cannot move between particles",
+      explanation: "Protons and neutrons are bound inside atomic nuclei — they do not transfer during ordinary collisions. Only electrons, which occupy the outer regions of atoms, can be exchanged on contact. Lighter ice crystals lose electrons to heavier water droplets, creating the charge separation that drives lightning formation."
+    },
+ 
+    {
+      id: "lb_boss_003",
+      mode: "lightning-builder",
+      topic: "ionized_air",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "If air could never be ionized, what would be the most important consequence for lightning?",
+      choices: [
+        "Lightning would strike more often because charge could build up without limit",
+        "Lightning could not form at all — no conductive channel could bridge the cloud-to-ground gap through air",
+        "Lightning would travel through solid rock and soil instead",
+        "Clouds would still discharge but only through rainfall, not visible lightning"
+      ],
+      answer: "Lightning could not form at all — no conductive channel could bridge the cloud-to-ground gap through air",
+      explanation: "The stepped leader depends entirely on ionizing air to build a conducting plasma channel. Without ionization, air would remain a permanent insulator across the entire gap. No channel could form, charge could never discharge through the atmosphere, and lightning as we know it would be physically impossible."
+    },
+ 
+    {
+      id: "lb_boss_004",
+      mode: "lightning-builder",
+      topic: "conductors_insulators",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A lightning rod is connected by copper cable to a buried ground rod. Why does lightning choose the rod over the barn wall? Use particle-level reasoning.",
+      choices: [
+        "The lightning rod is magnetic and actively attracts charge away from the barn",
+        "Copper's loosely held electrons allow charge to flow with minimal resistance, while barn wood holds electrons tightly and offers a much harder path",
+        "The barn wall reflects lightning because wood carries a natural negative charge",
+        "Lightning prefers the path closest to horizontal, and the rod extends sideways farther"
+      ],
+      answer: "Copper's loosely held electrons allow charge to flow with minimal resistance, while barn wood holds electrons tightly and offers a much harder path",
+      explanation: "Lightning follows the path of least resistance. In copper, outer electrons are loosely held and flow easily all the way to earth. Wood and building materials hold electrons tightly, offering far more resistance. The stepped leader preferentially connects to the rod tip, and charge flows down the copper rather than through the structure. Height also helps the rod intercept the stepped leader first."
+    },
+ 
+    {
+      id: "lb_boss_005",
+      mode: "lightning-builder",
+      topic: "lightning_safety",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A camper moves from a tall tree to the shore of a lake during a storm, thinking the lake is safer. Evaluate this reasoning.",
+      choices: [
+        "The camper is correct — water absorbs lightning and is safer than trees",
+        "Both locations are dangerous: trees risk side-flash strikes, and lake water conducts charge across its surface from a nearby strike",
+        "The camper is right because trees are the primary lightning hazard outdoors",
+        "The tree is safer because its roots ground charge directly and quickly"
+      ],
+      answer: "Both locations are dangerous: trees risk side-flash strikes, and lake water conducts charge across its surface from a nearby strike",
+      explanation: "Tall trees concentrate induced charge and can arc to a nearby person via side flash or root current. Lake water is equally dangerous — dissolved ions allow a nearby strike's charge to radiate across the entire surface. Moving from tree to lake trades one hazard for another equally serious one. The correct action is to leave both and seek an enclosed building or vehicle."
+    },
+ 
+    {
+      id: "lb_boss_006",
+      mode: "lightning-builder",
+      topic: "lightning_safety",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A coach clears athletes from an outdoor pool. An athlete argues: 'Pool water is treated — it's practically pure and safe.' Why is this wrong?",
+      choices: [
+        "The reasoning is correct — treated pool water is pure enough to be safe",
+        "Pool water contains chlorine compounds, pH-adjusting salts, and dissolved minerals that dissociate into ions, making it conductive",
+        "Pool water is dangerous only when cold, not because it conducts electricity",
+        "Only saltwater pools are dangerous; freshwater pools with chemical treatment are safe"
+      ],
+      answer: "Pool water contains chlorine compounds, pH-adjusting salts, and dissolved minerals that dissociate into ions, making it conductive",
+      explanation: "Pool treatment adds chlorine compounds, calcium, sodium bicarbonate, and other chemicals that dissociate into ions. Swimmers also introduce dissolved body salts. 'Treated' does not mean 'distilled' — pool water is an ionic solution and a capable conductor. A nearby strike can send current across the entire surface, endangering every swimmer."
+    },
+ 
+    {
+      id: "lb_boss_007",
+      mode: "lightning-builder",
+      topic: "aqueous_conductivity",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Sugar (C₁₂H₂₂O₁₁) dissolves in one beaker; salt (NaCl) in another. Only one conducts electricity. Which and why — at the particle level?",
+      choices: [
+        "Sugar solution, because sugar molecules are larger and carry more charge",
+        "Salt solution, because NaCl separates into free Na⁺ and Cl⁻ ions that carry current; sugar dissolves as intact neutral molecules",
+        "Both conduct equally because both dissolve completely in water",
+        "Neither conducts because water molecules block ion movement"
+      ],
+      answer: "Salt solution, because NaCl separates into free Na⁺ and Cl⁻ ions that carry current; sugar dissolves as intact neutral molecules",
+      explanation: "NaCl is an ionic compound — water molecules pull it apart into free Na⁺ and Cl⁻ ions that migrate and carry charge. Sugar is a covalent molecule that dissolves without releasing ions; the intact neutral molecules carry no net charge and cannot transport current. Conductivity requires free, mobile charge carriers."
+    },
+ 
+    {
+      id: "lb_boss_008",
+      mode: "lightning-builder",
+      topic: "aqueous_conductivity",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A person is completely soaked when lightning strikes nearby. Why is being wet more dangerous than being dry? Use ion and conductivity reasoning.",
+      choices: [
+        "Wet skin is heavier and slows the person from moving away from the strike zone",
+        "Sweat and water on skin contain dissolved ions, making the body surface more conductive and giving current an easier path",
+        "Water molecules on wet skin attract the stepped leader by aligning their dipoles toward it",
+        "Wet skin blocks current from entering the body internally, concentrating all danger on the skin surface"
+      ],
+      answer: "Sweat and water on skin contain dissolved ions, making the body surface more conductive and giving current an easier path",
+      explanation: "Sweat and tap water carry dissolved sodium, chloride, potassium, and other ions — creating a conductive film across the body's surface. This lowers skin resistance, allowing more current to flow for a given voltage. Whether from a direct strike or ground-current spread, a wet person faces greater risk because charge travels more easily through the ionic film on the skin."
+    }
+]
+};
 
 let MODES=[chargeClashMode,coulombChaosMode,ionicSurvivalMode,lightningBuilderMode];
 

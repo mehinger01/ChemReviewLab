@@ -139,26 +139,619 @@ title:"Charge Clash",
 subtitle:"Master atoms, charge, attraction, repulsion, electron transfer, and polarization.",
 topics:["subatomic_particles","charge_interactions","net_charge","electron_transfer","polarization","model_explanations"],
 questions:[
-{id:"cc001",mode:"charge-clash",topic:"charge_interactions",difficulty:1,type:"multiple_choice",prompt:"A negatively charged piece of tinsel is brought near a positively charged metal bucket. What interaction should happen?",choices:["They attract","They repel","There is no interaction","They both become neutral instantly"],answer:"They attract",explanation:"Opposite charges attract, so negative tinsel is pulled toward the positive bucket."},
-{id:"cc002",mode:"charge-clash",topic:"charge_interactions",difficulty:1,type:"multiple_choice",prompt:"A negatively charged PVC pipe is brought near negatively charged tinsel. What happens?",choices:["They attract","They repel","They become molecular","The tinsel becomes a proton"],answer:"They repel",explanation:"Like charges repel. Negative and negative push away from each other."},
-{id:"cc003",mode:"charge-clash",topic:"charge_interactions",difficulty:1,type:"multiple_choice",prompt:"Two neutral pieces of paper are brought close together. What is the best prediction?",choices:["Strong attraction","Strong repulsion","Little to no electrostatic interaction","They become ions"],answer:"Little to no electrostatic interaction",explanation:"Neutral objects usually do not strongly attract or repel unless charge separation is induced."},
-{id:"cc004",mode:"charge-clash",topic:"subatomic_particles",difficulty:1,type:"multiple_choice",prompt:"Which three particles make up atoms?",choices:["Protons, neutrons, electrons","Ions, molecules, compounds","Solids, liquids, gases","Clouds, lightning, air"],answer:"Protons, neutrons, electrons",explanation:"Atoms contain protons and neutrons in the nucleus, with electrons around the nucleus."},
-{id:"cc005",mode:"charge-clash",topic:"subatomic_particles",difficulty:1,type:"multiple_choice",prompt:"Which particle has a negative charge?",choices:["Proton","Neutron","Electron","Nucleus"],answer:"Electron",explanation:"Electrons are negatively charged and can move between objects in static electricity."},
-{id:"cc006",mode:"charge-clash",topic:"subatomic_particles",difficulty:1,type:"multiple_choice",prompt:"Which particle has a positive charge?",choices:["Proton","Neutron","Electron","Molecule"],answer:"Proton",explanation:"Protons are positively charged and are located in the nucleus."},
-{id:"cc007",mode:"charge-clash",topic:"subatomic_particles",difficulty:1,type:"multiple_choice",prompt:"Which particle has no electric charge?",choices:["Proton","Neutron","Electron","Ion"],answer:"Neutron",explanation:"Neutrons are neutral particles in the nucleus."},
-{id:"cc008",mode:"charge-clash",topic:"net_charge",difficulty:2,type:"multiple_choice",prompt:"An object has more electrons than protons. What is its net charge?",choices:["Positive","Negative","Neutral","Molecular"],answer:"Negative",explanation:"Extra electrons give an object a net negative charge."},
-{id:"cc009",mode:"charge-clash",topic:"net_charge",difficulty:2,type:"multiple_choice",prompt:"An object loses electrons. What happens to its net charge?",choices:["It becomes more positive","It becomes more negative","It becomes a neutron","It loses all mass"],answer:"It becomes more positive",explanation:"Losing negative electrons leaves the object with more positive charge overall."},
-{id:"cc010",mode:"charge-clash",topic:"electron_transfer",difficulty:2,type:"multiple_choice",prompt:"In most classroom static electricity examples, what moves from one object to another?",choices:["Protons","Neutrons","Electrons","Nuclei"],answer:"Electrons",explanation:"Static charge usually forms because electrons transfer between materials."},
-{id:"cc011",mode:"charge-clash",topic:"polarization",difficulty:2,type:"multiple_choice",prompt:"A charged balloon sticks to a neutral wall. What is the best explanation?",choices:["The wall becomes permanently negative","Charges in the wall shift slightly","The balloon creates protons","The wall becomes ionic"],answer:"Charges in the wall shift slightly",explanation:"The charged balloon induces polarization in the neutral wall, creating attraction."},
-{id:"cc012",mode:"charge-clash",topic:"polarization",difficulty:2,type:"multiple_choice",prompt:"During polarization, are electrons transferred into the neutral object?",choices:["Always","Usually not","Only protons move","Only neutrons move"],answer:"Usually not",explanation:"Polarization is a temporary shifting of charge inside the object, not full electron transfer."},
-{id:"cc013",mode:"charge-clash",topic:"model_explanations",difficulty:2,type:"multiple_choice",prompt:"A good particle-level model of balloon-wall attraction should include what?",choices:["Only the balloon","Shifted charges in the wall","A chemical equation","Only the wall color"],answer:"Shifted charges in the wall",explanation:"The model should show how a charged object induces partial charge separation in a neutral object."},
-{id:"cc014",mode:"charge-clash",topic:"charge_interactions",difficulty:1,type:"multiple_choice",prompt:"Which pair repels?",choices:["Positive and negative","Negative and neutral always","Positive and positive","Neutral and neutral strongly"],answer:"Positive and positive",explanation:"Like charges repel, so two positive objects repel."},
-{id:"cc015",mode:"charge-clash",topic:"charge_interactions",difficulty:1,type:"multiple_choice",prompt:"Which pair attracts most directly because of charge?",choices:["Negative and negative","Positive and positive","Positive and negative","Neutral and neutral"],answer:"Positive and negative",explanation:"Opposite charges attract."}
+    {
+      id: "cc001",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Two objects both carry a positive charge. What happens when they are brought close together?",
+      choices: [
+        "They attract each other",
+        "They repel each other",
+        "Nothing happens",
+        "They become neutral"
+      ],
+      answer: "They repel each other",
+      explanation: "Like charges repel. Two positive objects push away from each other."
+    },
+ 
+    {
+      id: "cc002",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "A positive object and a negative object are placed near each other. What happens?",
+      choices: [
+        "They repel",
+        "They attract",
+        "They swap charges",
+        "They both become neutral"
+      ],
+      answer: "They attract",
+      explanation: "Opposite charges attract. A positive and negative object pull toward each other."
+    },
+ 
+    {
+      id: "cc003",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Which statement about electric charge is correct?",
+      choices: [
+        "Like charges attract; opposite charges repel",
+        "Like charges repel; opposite charges attract",
+        "All charges attract each other",
+        "Neutral objects always repel charged objects"
+      ],
+      answer: "Like charges repel; opposite charges attract",
+      explanation: "This is the fundamental rule of electrostatics: like charges push apart, opposite charges pull together."
+    },
+ 
+    {
+      id: "cc004",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Which subatomic particle carries a negative charge?",
+      choices: [
+        "Proton",
+        "Neutron",
+        "Electron",
+        "Nucleus"
+      ],
+      answer: "Electron",
+      explanation: "Electrons are negatively charged. They are the particles that move during charge transfer."
+    },
+ 
+    {
+      id: "cc005",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Which subatomic particle carries a positive charge?",
+      choices: [
+        "Electron",
+        "Neutron",
+        "Proton",
+        "Ion"
+      ],
+      answer: "Proton",
+      explanation: "Protons are positively charged and are located in the nucleus of an atom."
+    },
+ 
+    {
+      id: "cc006",
+      mode: "charge-clash",
+      topic: "attraction_repulsion",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "A negatively charged balloon is brought near a wall. The balloon sticks to the wall. What does this tell you about the wall?",
+      choices: [
+        "The wall must be negatively charged",
+        "The wall must have a positive region near the balloon",
+        "The wall has no charge and cannot interact",
+        "The wall must have transferred electrons to the balloon"
+      ],
+      answer: "The wall must have a positive region near the balloon",
+      explanation: "Attraction requires opposite charges. The negative balloon can only stick if the nearby wall surface has a positive region, produced by charge redistribution."
+    },
+ 
+    {
+      id: "cc007",
+      mode: "charge-clash",
+      topic: "attraction_repulsion",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Two negatively charged objects are brought near each other. What is the interaction?",
+      choices: [
+        "Attraction, because they are both charged",
+        "Repulsion, because they have the same type of charge",
+        "No interaction, because negative charges cancel",
+        "Attraction, because negative charges always attract"
+      ],
+      answer: "Repulsion, because they have the same type of charge",
+      explanation: "Like charges always repel, regardless of sign. Two negative objects push away from each other."
+    },
+ 
+    {
+      id: "cc008",
+      mode: "charge-clash",
+      topic: "attraction_repulsion",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A charged rod is brought near small pieces of neutral paper. The paper pieces jump toward the rod. What best explains this?",
+      choices: [
+        "The paper pieces are permanently charged opposite to the rod",
+        "The rod transfers charge directly to the paper before attraction occurs",
+        "Charges inside the paper shift slightly, making the near side opposite to the rod",
+        "Neutral objects are always attracted to any nearby object"
+      ],
+      answer: "Charges inside the paper shift slightly, making the near side opposite to the rod",
+      explanation: "This is polarization. The rod's charge pushes or pulls electrons in the paper, creating an opposite charge on the near side. That opposite charge is attracted to the rod."
+    },
+ 
+    {
+      id: "cc009",
+      mode: "charge-clash",
+      topic: "attraction_repulsion",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A positively charged rod is held near a neutral metal sphere without touching it. The near side of the sphere becomes negative. Why?",
+      choices: [
+        "The rod donated protons to the sphere",
+        "Electrons in the sphere were attracted toward the rod and moved to the near side",
+        "The sphere generated new negative charges in response to the rod",
+        "Neutrons in the sphere converted to electrons"
+      ],
+      answer: "Electrons in the sphere were attracted toward the rod and moved to the near side",
+      explanation: "The positive rod attracts electrons in the conductor. Electrons shift toward the rod, making that side negative and the far side positive."
+    },
+ 
+    {
+      id: "cc010",
+      mode: "charge-clash",
+      topic: "attraction_repulsion",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "After a charged rod is removed from near a neutral metal sphere, what happens to the sphere's charge distribution?",
+      choices: [
+        "The sphere stays permanently polarized",
+        "The sphere retains the negative charge the rod gave it",
+        "Electrons redistribute evenly and the sphere returns to neutral",
+        "The sphere becomes permanently positive"
+      ],
+      answer: "Electrons redistribute evenly and the sphere returns to neutral",
+      explanation: "Polarization is temporary. Once the external charge is removed, electrons spread back evenly and the object returns to an overall neutral state."
+    },
+ 
+    {
+      id: "cc011",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Static electricity most commonly builds up when:",
+      choices: [
+        "Two objects are placed far apart in a vacuum",
+        "Two materials rub together and electrons transfer between them",
+        "A metal wire connects two objects",
+        "Water is poured between two surfaces"
+      ],
+      answer: "Two materials rub together and electrons transfer between them",
+      explanation: "Friction can transfer electrons from one material to another, leaving one object with excess electrons (negative) and the other with a deficit (positive)."
+    },
+ 
+    {
+      id: "cc012",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "When you rub a balloon on your hair, the balloon becomes negatively charged. What happened?",
+      choices: [
+        "Protons moved from your hair to the balloon",
+        "Electrons moved from your hair to the balloon",
+        "Neutrons moved from the balloon to your hair",
+        "The balloon created new electrons from friction heat"
+      ],
+      answer: "Electrons moved from your hair to the balloon",
+      explanation: "Rubbing transfers electrons. The balloon gains electrons from your hair, becoming negatively charged. Your hair loses electrons and becomes positively charged."
+    },
+ 
+    {
+      id: "cc013",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "After rubbing a balloon on hair, the hair stands up and is attracted to the balloon. Why?",
+      choices: [
+        "The hair and balloon both became positive",
+        "The hair became positive and the balloon became negative, so they attract",
+        "Friction magnetized both the hair and balloon",
+        "The hair and balloon exchanged neutrons"
+      ],
+      answer: "The hair became positive and the balloon became negative, so they attract",
+      explanation: "Electron transfer left the hair with a positive charge and the balloon with a negative charge. Opposite charges attract."
+    },
+ 
+    {
+      id: "cc014",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "You shuffle across a carpet and then touch a metal doorknob. You feel a small shock. What caused the shock?",
+      choices: [
+        "The doorknob was already charged and repelled you",
+        "Walking transferred charge to you; touching the metal allowed it to discharge rapidly",
+        "The carpet generated electricity and sent it through your body",
+        "Metal doorknobs always produce shocks when touched"
+      ],
+      answer: "Walking transferred charge to you; touching the metal allowed it to discharge rapidly",
+      explanation: "Shuffling on carpet transferred electrons, charging your body. The metal doorknob is a conductor. When you touch it, the excess charge moves rapidly, producing a spark and a shock sensation."
+    },
+ 
+    {
+      id: "cc015",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "Static charge tends to build up more easily on insulators than on conductors. Why?",
+      choices: [
+        "Insulators have more electrons than conductors",
+        "On insulators, charge stays where it is deposited and cannot spread away",
+        "Conductors repel all incoming charge",
+        "Insulators attract charge from the air more easily"
+      ],
+      answer: "On insulators, charge stays where it is deposited and cannot spread away",
+      explanation: "Insulators do not allow electrons to move freely. Charge deposited in one spot stays there. On conductors, charge quickly spreads or flows away."
+    },
+ 
+    {
+      id: "cc016",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A student charges a plastic rod by rubbing it with wool. Plastic is an insulator. Where does the excess charge reside?",
+      choices: [
+        "It spreads evenly across the entire rod instantly",
+        "It remains concentrated where the rubbing occurred",
+        "It flows to the student's hand immediately",
+        "It dissipates into the air within seconds"
+      ],
+      answer: "It remains concentrated where the rubbing occurred",
+      explanation: "Plastic is an insulator. Electrons cannot flow through it, so charge stays near where it was deposited by rubbing."
+    },
+ 
+    {
+      id: "cc017",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "An object gains electrons. What happens to its overall charge?",
+      choices: [
+        "It becomes more positive",
+        "It becomes more negative",
+        "It stays neutral",
+        "It becomes magnetic"
+      ],
+      answer: "It becomes more negative",
+      explanation: "Gaining electrons adds negative charge. The object now has more negative particles than positive, making it negatively charged overall."
+    },
+ 
+    {
+      id: "cc018",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "An object loses electrons. What happens to its overall charge?",
+      choices: [
+        "It becomes more negative",
+        "It becomes more positive",
+        "It stays neutral",
+        "It loses protons"
+      ],
+      answer: "It becomes more positive",
+      explanation: "Losing electrons removes negative charge. The object now has more protons than electrons, giving it a net positive charge."
+    },
+ 
+    {
+      id: "cc019",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "In static electricity, why do electrons transfer rather than protons?",
+      choices: [
+        "Protons are negatively charged and do not move",
+        "Protons are locked in the nucleus; electrons are on the outside and can be moved",
+        "Electrons are heavier and easier to push",
+        "Protons are transferred in liquids only"
+      ],
+      answer: "Protons are locked in the nucleus; electrons are on the outside and can be moved",
+      explanation: "Protons are bound inside atomic nuclei and do not transfer between objects in ordinary static interactions. Only electrons, located in outer shells, are transferred."
+    },
+ 
+    {
+      id: "cc020",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "Object A has 10 protons and 12 electrons. What is its charge?",
+      choices: [
+        "Positive, because it has more protons",
+        "Negative, because it has more electrons",
+        "Neutral, because both protons and electrons are present",
+        "Positive, because electrons outnumber protons"
+      ],
+      answer: "Negative, because it has more electrons",
+      explanation: "Net charge = protons minus electrons. 10 - 12 = -2. The object has a net negative charge."
+    },
+ 
+    {
+      id: "cc021",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "Two objects touch. Object A has excess electrons; Object B is neutral. What is the most likely outcome?",
+      choices: [
+        "Object B loses electrons to Object A",
+        "Some electrons move from Object A to Object B until charge distributes more evenly",
+        "Protons flow from Object B to Object A",
+        "No charge movement occurs because one object is neutral"
+      ],
+      answer: "Some electrons move from Object A to Object B until charge distributes more evenly",
+      explanation: "Electrons flow from regions of higher concentration to lower concentration. Object A's excess electrons spread partially to Object B upon contact."
+    },
+ 
+    {
+      id: "cc022",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A student says: 'Rubbing creates charge.' What is the more accurate description?",
+      choices: [
+        "Rubbing creates new electrons from friction energy",
+        "Rubbing converts neutrons into electrons",
+        "Rubbing transfers existing electrons from one object to another",
+        "Rubbing destroys protons, leaving excess electrons"
+      ],
+      answer: "Rubbing transfers existing electrons from one object to another",
+      explanation: "Charge is conserved. Rubbing does not create electrons — it moves them. One object gains what the other loses."
+    },
+ 
+    {
+      id: "cc023",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Which material allows electric charge to move through it most easily?",
+      choices: [
+        "Rubber",
+        "Plastic",
+        "Copper",
+        "Glass"
+      ],
+      answer: "Copper",
+      explanation: "Copper is a metal and a conductor. Its loosely held outer electrons move freely, allowing charge to flow easily."
+    },
+ 
+    {
+      id: "cc024",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 1,
+      type: "multiple_choice",
+      prompt: "Why is rubber used to coat electrical wires?",
+      choices: [
+        "Rubber conducts electricity efficiently",
+        "Rubber is an insulator that prevents unwanted charge flow",
+        "Rubber increases the speed of electron movement",
+        "Rubber generates electricity to power the wire"
+      ],
+      answer: "Rubber is an insulator that prevents unwanted charge flow",
+      explanation: "Rubber's electrons are tightly held and cannot move. This prevents dangerous current from escaping the wire and reaching people."
+    },
+ 
+    {
+      id: "cc025",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A metal rod is held with a rubber handle and then charged by touching a charged object. What happens to the charge on the metal rod?",
+      choices: [
+        "The charge flows through the rubber into the student's hand",
+        "The charge spreads across the metal rod but is blocked from leaving by the rubber handle",
+        "The charge disappears because rubber neutralizes metals",
+        "The charge stays only at the point of contact on the metal"
+      ],
+      answer: "The charge spreads across the metal rod but is blocked from leaving by the rubber handle",
+      explanation: "Charge spreads freely across the conducting metal. The rubber handle is an insulator, so charge cannot flow through it and is contained in the metal."
+    },
+ 
+    {
+      id: "cc026",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A charged metal sphere is connected to the ground by a wire. What happens to its charge?",
+      choices: [
+        "The charge increases as ground provides more electrons",
+        "The charge stays the same because metal holds charge tightly",
+        "The excess charge flows through the wire into the ground and the sphere becomes neutral",
+        "The sphere repels electrons from the ground, increasing its charge"
+      ],
+      answer: "The excess charge flows through the wire into the ground and the sphere becomes neutral",
+      explanation: "Grounding provides a conducting path to Earth. Excess charge flows away from the sphere, neutralizing it. Earth is large enough to absorb or supply charge without becoming measurably charged."
+    },
+ 
+    {
+      id: "cc027",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "Two identical metal spheres are touched together. Sphere A has a charge of +4 units; Sphere B has a charge of -2 units. What is the charge on each sphere after they separate?",
+      choices: [
+        "Sphere A stays +4; Sphere B stays -2",
+        "Each sphere has +1 unit",
+        "Each sphere has +2 units",
+        "Each sphere has -1 unit"
+      ],
+      answer: "Each sphere has +1 unit",
+      explanation: "Total charge = +4 + (-2) = +2 units. When conductors touch, charge distributes evenly: +2 split equally = +1 on each sphere."
+    },
+ 
+    {
+      id: "cc028",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A positive charge is placed between two negative charges. The positive charge will:",
+      choices: [
+        "Repel both negative charges equally",
+        "Be attracted to both negative charges simultaneously",
+        "Remain stationary because forces cancel",
+        "Become neutral from the combined attraction"
+      ],
+      answer: "Be attracted to both negative charges simultaneously",
+      explanation: "Opposite charges attract. The positive charge between two negative charges feels attractive force from both sides."
+    },
+ 
+    {
+      id: "cc029",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "Object A is positive. Object B is positive. Object C is negative. Which pair has the strongest attraction?",
+      choices: [
+        "A and B",
+        "A and C",
+        "B and C",
+        "A and B attract equally to C"
+      ],
+      answer: "A and C",
+      explanation: "Attraction occurs between opposite charges. Both A-C and B-C are opposite pairs. Without distance information, either A-C or B-C is correct — but A and B repel each other."
+    },
+ 
+    {
+      id: "cc030",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 2,
+      type: "multiple_choice",
+      prompt: "A student rubs a glass rod with silk. The glass becomes positively charged. What happened to the silk?",
+      choices: [
+        "The silk also became positively charged",
+        "The silk became negatively charged",
+        "The silk remained neutral because only glass can hold charge",
+        "The silk lost protons to the glass rod"
+      ],
+      answer: "The silk became negatively charged",
+      explanation: "Charge is conserved. The glass became positive because it lost electrons. Those electrons went to the silk, making the silk negatively charged."
+      }
+ 
 ],
 bossQuestions:[
-{id:"ccb01",mode:"charge-clash",topic:"polarization",difficulty:3,type:"multiple_choice",prompt:"Boss: A negatively charged balloon sticks to a neutral wall. Which model best explains this?",choices:["The wall’s electrons shift slightly away, leaving the near side partially positive","The wall gains many protons from the balloon","The balloon becomes neutral before touching the wall","The wall turns into saltwater"],answer:"The wall’s electrons shift slightly away, leaving the near side partially positive",explanation:"A negative balloon repels electrons in the wall slightly, making the nearby wall surface partially positive. Opposite charge regions attract."},
-{id:"ccb02",mode:"charge-clash",topic:"electron_transfer",difficulty:3,type:"multiple_choice",prompt:"Boss: A student says, 'The object became negative because it gained protons.' What correction is best?",choices:["It became negative because it gained electrons","It became negative because neutrons left","It became negative because protons are negative","It became negative because molecules disappeared"],answer:"It became negative because it gained electrons",explanation:"Negative charge comes from extra electrons. Protons usually stay in the nucleus and do not transfer in static electricity."},
-{id:"ccb03",mode:"charge-clash",topic:"model_explanations",difficulty:3,type:"multiple_choice",prompt:"Boss: Which explanation best connects particle scale to object-scale attraction?",choices:["Tiny charge shifts can create attractive forces between larger objects","Large objects attract only because of color","Neutral objects can never interact with charged objects","Only magnets can create forces at a distance"],answer:"Tiny charge shifts can create attractive forces between larger objects",explanation:"Small-scale charge patterns can produce forces that we observe at the object scale."}
+ {
+      id: "ccb01",
+      mode: "charge-clash",
+      topic: "electron_transfer",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Boss: A student touches a negatively charged metal sphere with their bare hand. The sphere becomes neutral. At the particle level, what most likely happened?",
+      choices: [
+        "Protons flowed from the student's hand into the sphere",
+        "Excess electrons from the sphere flowed through the student's hand to ground",
+        "The sphere's electrons were destroyed by the student's body heat",
+        "Neutrons in the sphere converted to protons, neutralizing the charge"
+      ],
+      answer: "Excess electrons from the sphere flowed through the student's hand to ground",
+      explanation: "The student's body and the Earth act as a ground. Excess electrons on the negatively charged sphere flow through the conducting path of the student's hand and body into the Earth. The sphere neutralizes because it loses its excess electrons, not because anything is created or destroyed."
+    },
+ 
+    {
+      id: "ccb02",
+      mode: "charge-clash",
+      topic: "attraction_repulsion",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Boss: A negatively charged rod is held near, but not touching, a neutral metal sphere suspended by a string. The sphere swings toward the rod. A student says this proves the sphere is positively charged. What is wrong with this conclusion?",
+      choices: [
+        "Nothing is wrong — the sphere must be positive if it attracts the rod",
+        "The sphere is neutral overall, but polarization shifted electrons away from the rod side, making that side temporarily positive",
+        "The sphere is actually repelling the rod, not attracting it",
+        "Neutral objects always swing toward any nearby object regardless of charge"
+      ],
+      answer: "The sphere is neutral overall, but polarization shifted electrons away from the rod side, making that side temporarily positive",
+      explanation: "The negative rod repels electrons in the conducting sphere to the far side, leaving the near side with a deficit of electrons — temporarily positive. This induced opposite charge attracts the sphere toward the rod. The sphere is still neutral overall. The student confused induction with permanent charging."
+    },
+ 
+    {
+      id: "ccb03",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Boss: Two students debate why a charged plastic comb can pick up paper bits but a charged metal rod held in a bare hand cannot pick them up as easily. Which explanation is correct?",
+      choices: [
+        "Plastic holds charge better than metal because plastic has more electrons",
+        "On plastic, charge stays localized where rubbed because plastic is an insulator; on metal held by hand, charge drains away through the conducting path to ground",
+        "Metal rods cannot be charged by rubbing, so no attraction is possible",
+        "Paper bits are attracted to insulators only, never to conductors"
+      ],
+      answer: "On plastic, charge stays localized where rubbed because plastic is an insulator; on metal held by hand, charge drains away through the conducting path to ground",
+      explanation: "Plastic is an insulator — charge deposited by rubbing stays put and can attract paper. Metal is a conductor. When held in a bare hand, charge flows through the metal and the student's body to ground, neutralizing the rod before it can attract paper. The difference is charge retention, not which material attracts paper."
+    },
+ 
+    {
+      id: "ccb04",
+      mode: "charge-clash",
+      topic: "charge_interactions",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Boss: Object X repels Object Y. Object Y attracts Object Z. Object X and Object Z are brought near each other. What is the most likely interaction, and why?",
+      choices: [
+        "X and Z repel, because repulsion always chains through objects",
+        "X and Z attract, because if X repels Y and Y attracts Z, X and Z are likely opposite charges",
+        "X and Z have no interaction because they were never in contact",
+        "X and Z repel, because Y acted as a bridge transferring the same charge to Z"
+      ],
+      answer: "X and Z attract, because if X repels Y and Y attracts Z, X and Z are likely opposite charges",
+      explanation: "X repels Y means X and Y have the same charge. Y attracts Z means Y and Z have opposite charges. If Y has the same charge as X, and Y is opposite to Z, then X and Z must be opposite to each other — and opposite charges attract."
+    },
+ 
+    {
+      id: "ccb05",
+      mode: "charge-clash",
+      topic: "static_electricity",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Boss: In a thundercloud, charge separation occurs as ice crystals and water droplets collide. The cloud base becomes negative and the ground below becomes positive. Which sequence of events leads to lightning?",
+      choices: [
+        "The positive ground repels the cloud's negative charge upward, creating a visible spark",
+        "The negative cloud base induces a positive charge on the ground; the electric force grows until it ionizes air and creates a conductive path for rapid charge discharge",
+        "The cloud releases protons downward toward the positively charged ground",
+        "Lightning forms only when two clouds collide and exchange neutrons"
+      ],
+      answer: "The negative cloud base induces a positive charge on the ground; the electric force grows until it ionizes air and creates a conductive path for rapid charge discharge",
+      explanation: "The negative cloud repels electrons in the ground downward, inducing a positive surface charge. As charge separation grows, the electric force becomes strong enough to ionize air molecules, creating a conductive channel. Charge then discharges rapidly through this channel — this is lightning."
+    },
+ 
+    {
+      id: "ccb06",
+      mode: "charge-clash",
+      topic: "conductors_insulators",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Boss: A student charges a metal sphere by induction using a negative rod (without touching), then grounds it briefly, then removes the ground, then removes the rod. What is the final charge on the sphere?",
+      choices: [
+        "Negative, because the rod was negative",
+        "Neutral, because grounding always neutralizes a sphere completely",
+        "Positive, because grounding removed electrons while the rod repelled them away from the ground wire",
+        "Positive, because touching the sphere with the rod transferred positive charge"
+      ],
+      answer: "Positive, because grounding removed electrons while the rod repelled them away from the ground wire",
+      explanation: "The negative rod repels electrons in the sphere toward the ground wire. While grounded, those electrons flow to Earth. When the ground is removed, the sphere is left with fewer electrons than protons — it is positively charged. Removing the rod does not change this. The sphere was charged by induction and grounding, ending up opposite to the charging rod."
+    } 
 ]};
 
 const coulombChaosMode = {

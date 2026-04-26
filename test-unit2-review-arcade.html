@@ -115,7 +115,7 @@ const TOPICS = {
   net_charge:"Net Charge",
   electron_transfer:"Electron Transfer",
   polarization:"Polarization",
-  coulombs_law:"Coulomb's Law",
+  s_law:"'s Law",
   lightning_formation:"Lightning Formation",
   ionized_air:"Ionized Air",
   conductors_insulators:"Conductors & Insulators",
@@ -686,9 +686,109 @@ questions:[
     answer: "Doubling both charges and halving the distance",
     explanation: "Doubling both charges multiplies force by 4. Halving distance multiplies force by 4 more. Combined: 4 × 4 = 16 times the original force."
   },
+  
 bossQuestions:[
-{id:"cob01",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:3,type:"multiple_choice",prompt:"Boss: Two lightning paths are possible. Path A is shorter but has less charge separation. Path B is longer but has much more charge buildup. What should you consider?",choices:["Both charge amount and distance affect force","Only distance matters","Only color matters","Only temperature matters"],answer:"Both charge amount and distance affect force",explanation:"Coulomb’s law connects force to charge amount and distance. Stronger charge can matter, but greater distance weakens force."},
-{id:"cob02",mode:"coulomb-chaos",topic:"coulombs_law",difficulty:3,type:"multiple_choice",prompt:"Boss: Why does moving charged objects farther apart quickly weaken their interaction?",choices:["Force decreases with the square of distance","Electrons become protons","Charges stop existing","Objects become molecular"],answer:"Force decreases with the square of distance",explanation:"The inverse-square distance relationship means even modest increases in distance can greatly reduce force."}
+{
+    id: "cob01",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: Two lightning paths are possible. Path A: short distance, weak charge. Path B: long distance, much larger charge. A student says Path B must have more force because the charge is bigger. Is this correct?",
+    choices: [
+      "Yes — charge is the only factor in Coulomb's law",
+      "No — both charge and distance affect force, and the squared distance effect may dominate",
+      "Yes — distance does not affect lightning",
+      "No — only distance matters for lightning"
+    ],
+    answer: "No — both charge and distance affect force, and the squared distance effect may dominate",
+    explanation: "Coulomb's law requires considering both charge and distance. Because distance is squared in the denominator, even a large charge advantage can be offset by a large distance. You cannot determine the stronger force from charge alone."
+  },
+ 
+  {
+    id: "cob02",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A student says 'Doubling the distance weakens force by half, so halving the distance doubles force.' Identify the error.",
+    choices: [
+      "There is no error — both statements are correct",
+      "The error is that distance has no effect on force",
+      "The error is that both effects involve squaring — doubling distance reduces force by 4×, halving distance increases force by 4×",
+      "The error is that only increasing distance affects force"
+    ],
+    answer: "The error is that both effects involve squaring — doubling distance reduces force by 4×, halving distance increases force by 4×",
+    explanation: "Force follows an inverse-square law. The factor is always distance², not distance. The student applied a linear model to a squared relationship in both directions."
+  },
+ 
+  {
+    id: "cob03",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A neutral metal sphere is placed between a positive and a negative charge. Which best describes what happens inside the sphere at the particle level?",
+    choices: [
+      "Nothing — the sphere is neutral so no forces act on it",
+      "Electrons in the sphere shift toward the positive charge, making that side negative and the far side positive",
+      "Protons move through the sphere toward the negative charge",
+      "The sphere splits into two separate charges"
+    ],
+    answer: "Electrons in the sphere shift toward the positive charge, making that side negative and the far side positive",
+    explanation: "The positive charge attracts electrons in the conductor; the negative charge repels them. Electrons redistribute: the near side (facing positive) becomes negative, the far side becomes positive. This is induction — no charge is transferred, but the internal distribution shifts."
+  },
+ 
+  {
+    id: "cob04",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A student claims that if you keep increasing charge on two objects, the force will always keep increasing indefinitely. Is there anything Coulomb's law alone doesn't tell you that matters here?",
+    choices: [
+      "No — Coulomb's law is complete and force will always increase with charge",
+      "Yes — at very high charge, objects discharge into the surrounding air before force can increase further",
+      "Yes — gravity eventually cancels electrostatic force at large charges",
+      "No — charge and distance are the only relevant variables ever"
+    ],
+    answer: "Yes — at very high charge, objects discharge into the surrounding air before force can increase further",
+    explanation: "Coulomb's law is mathematically correct, but in reality large charge buildup ionizes the surrounding air, allowing discharge before force can grow indefinitely. Real systems have limits Coulomb's law does not model — this is how lightning itself happens."
+  },
+ 
+  {
+    id: "cob05",
+    mode: "coulomb-chaos",
+    topic: "coulombs_law",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: Charge A = +4q, Charge B = −q, distance = r. Charge C = +2q, Charge D = −2q, distance = 2r. Which pair has greater attractive force, and why?",
+    choices: [
+      "A and B, because their charges multiply to a larger product at a shorter distance",
+      "C and D, because both charges are equal in magnitude",
+      "They are equal because charge products are the same",
+      "C and D, because having equal charges always produces more force"
+    ],
+    answer: "A and B, because their charges multiply to a larger product at a shorter distance",
+    explanation: "Force ∝ (q₁ × q₂) / r². A&B: (4q × q) / r² = 4q²/r². C&D: (2q × 2q) / (2r)² = 4q²/4r² = q²/r². A&B's force is 4 times greater. The squared distance for C&D overwhelms the charge advantage."
+  },
+ 
+  {
+    id: "cob06",
+    mode: "coulomb-chaos",
+    topic: "charge_interactions",
+    difficulty: 3,
+    type: "multiple_choice",
+    prompt: "Boss: A student says neutral objects never feel any force from charged objects because they have no net charge. What is wrong with this model?",
+    choices: [
+      "Nothing — neutral objects truly feel no electrostatic force",
+      "Neutral objects can be polarized, shifting internal charges so that the closer side is attracted more strongly than the farther side is repelled",
+      "Neutral objects always repel charged objects",
+      "The student is correct because Coulomb's law only applies to charged objects"
+    ],
+    answer: "Neutral objects can be polarized, shifting internal charges so that the closer side is attracted more strongly than the farther side is repelled",
+    explanation: "When a charged object is near a neutral one, it induces a charge shift. The near side of the neutral object develops opposite charge (closer, stronger attraction) and the far side develops like charge (farther, weaker repulsion). The net result is a weak but real attraction. This is why charged balloons stick to neutral walls."
+  }
 ]};
 
 const ionicSurvivalMode = {
@@ -1156,9 +1256,6 @@ questions:[
     answer: "electric discharge",
     explanation: "A spark occurs when charge rapidly moves through air."
   }
-],
-bossQuestions:[
-{id:"lbb01",mode:"lightning-builder",topic:"lightning_formation",difficulty:3,type:"multiple_choice",prompt:"Boss: What sequence best explains cloud-to-ground lightning?",choices:["Charge separates, air ionizes, a path connects, electrons rapidly move","Salt dissolves, sugar forms, paper burns, protons vanish","Water freezes, neutrons move, carbon bonds, light stops","Ground becomes molecular, clouds disappear, air becomes metal"],answer:"Charge separates, air ionizes, a path connects, electrons rapidly move",explanation:"Lightning requires charge separation, ionized air pathways, and rapid charge movement through the connected path."}
 ]};
 
 let MODES=[chargeClashMode,coulombChaosMode,ionicSurvivalMode,lightningBuilderMode];

@@ -836,18 +836,67 @@ function goMenu(){
   updatePills();
   show("menuScreen");
 }
-function chooseQuestion(){
+
+  function chooseQuestion(){
+
   questionCount++;
 
-  const bossDue = (streak>0 && streak%5===0) || (questionCount%10===0);
+  const bossDue =
+    (streak > 0 && streak % 5 === 0) ||
+    (questionCount % 10 === 0);
 
   if(bossDue && currentMode.bossQuestions.length){
-    const available=currentMode.bossQuestions.filter(q=>!usedIds.includes(q.id));
+
+    const available =
+      currentMode.bossQuestions.filter(
+        q => !usedIds.includes(q.id)
+      );
+
     if(available.length){
-      isBoss=true;
-      return available[Math.floor(Math.random()*available.length)];
+      isBoss = true;
+
+      return available[
+        Math.floor(Math.random() * available.length)
+      ];
     }
   }
+
+  isBoss = false;
+
+  let pool =
+    currentMode.questions.filter(
+      q => !usedIds.includes(q.id)
+    );
+
+  if(pool.length === 0){
+    usedIds = [];
+    pool = currentMode.questions;
+  }
+
+  if(questionCount > 7){
+
+    const weakTopics =
+      Object.entries(topicStats)
+        .filter(([t,s]) => s.weakness > 1)
+        .map(([t]) => t);
+
+    const weakPool =
+      pool.filter(q =>
+        weakTopics.includes(q.topic)
+      );
+
+    if(
+      weakPool.length &&
+      Math.random() < 0.45
+    ){
+      pool = weakPool;
+    }
+  }
+
+  return pool[
+    Math.floor(Math.random() * pool.length)
+  ];
+}
 
   isBoss=false;
 

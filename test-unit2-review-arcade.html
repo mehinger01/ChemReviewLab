@@ -115,7 +115,7 @@ const TOPICS = {
   net_charge:"Net Charge",
   electron_transfer:"Electron Transfer",
   polarization:"Polarization",
-  s_law:"'s Law",
+  coulombs_law:"Coulomb's Law",
   lightning_formation:"Lightning Formation",
   ionized_air:"Ionized Air",
   conductors_insulators:"Conductors & Insulators",
@@ -1156,8 +1156,146 @@ questions:[
     ],
     answer: "electric discharge",
     explanation: "A spark occurs when charge rapidly moves through air."
-  }
-]};
+    }
+],
+bossQuestions:[
+     {
+      id: "lb_boss_001",
+      mode: "lightning-builder",
+      topic: "lightning_formation",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A student says: 'Lightning is electricity falling straight down from a cloud.' Identify the most significant flaw in this model.",
+      choices: [
+        "Lightning is not electricity — it is ionized plasma with no charge transfer",
+        "The model ignores charge separation, the invisible stepped leader, and the return stroke that travels upward",
+        "The model is correct; all lightning movement is downward",
+        "The flaw is that electricity can only travel through wires, not open air"
+      ],
+      answer: "The model ignores charge separation, the invisible stepped leader, and the return stroke that travels upward",
+      explanation: "Lightning requires charge separation inside the cloud, an invisible stepped leader ionizing a path downward, and then a powerful return stroke rushing upward. The visible flash actually travels upward, not downward. The model is missing the mechanism and the direction of the visible event."
+    },
+ 
+    {
+      id: "lb_boss_002",
+      mode: "lightning-builder",
+      topic: "lightning_formation",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "During cloud charge separation, why are electrons transferred rather than protons?",
+      choices: [
+        "Protons transfer from ice to water droplets because they are smaller than electrons",
+        "Only electrons transfer because protons are locked inside nuclei and cannot move between particles",
+        "Neutrons move from water droplets to ice crystals due to gravity",
+        "Whole atoms transfer between cloud particles during high-speed collisions"
+      ],
+      answer: "Only electrons transfer because protons are locked inside nuclei and cannot move between particles",
+      explanation: "Protons and neutrons are bound inside atomic nuclei — they do not transfer during ordinary collisions. Only electrons, which occupy the outer regions of atoms, can be exchanged on contact. Lighter ice crystals lose electrons to heavier water droplets, creating the charge separation that drives lightning formation."
+    },
+ 
+    {
+      id: "lb_boss_003",
+      mode: "lightning-builder",
+      topic: "ionized_air",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "If air could never be ionized, what would be the most important consequence for lightning?",
+      choices: [
+        "Lightning would strike more often because charge could build up without limit",
+        "Lightning could not form at all — no conductive channel could bridge the cloud-to-ground gap through air",
+        "Lightning would travel through solid rock and soil instead",
+        "Clouds would still discharge but only through rainfall, not visible lightning"
+      ],
+      answer: "Lightning could not form at all — no conductive channel could bridge the cloud-to-ground gap through air",
+      explanation: "The stepped leader depends entirely on ionizing air to build a conducting plasma channel. Without ionization, air would remain a permanent insulator across the entire gap. No channel could form, charge could never discharge through the atmosphere, and lightning as we know it would be physically impossible."
+    },
+ 
+    {
+      id: "lb_boss_004",
+      mode: "lightning-builder",
+      topic: "conductors_insulators",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A lightning rod is connected by copper cable to a buried ground rod. Why does lightning choose the rod over the barn wall? Use particle-level reasoning.",
+      choices: [
+        "The lightning rod is magnetic and actively attracts charge away from the barn",
+        "Copper's loosely held electrons allow charge to flow with minimal resistance, while barn wood holds electrons tightly and offers a much harder path",
+        "The barn wall reflects lightning because wood carries a natural negative charge",
+        "Lightning prefers the path closest to horizontal, and the rod extends sideways farther"
+      ],
+      answer: "Copper's loosely held electrons allow charge to flow with minimal resistance, while barn wood holds electrons tightly and offers a much harder path",
+      explanation: "Lightning follows the path of least resistance. In copper, outer electrons are loosely held and flow easily all the way to earth. Wood and building materials hold electrons tightly, offering far more resistance. The stepped leader preferentially connects to the rod tip, and charge flows down the copper rather than through the structure. Height also helps the rod intercept the stepped leader first."
+    },
+ 
+    {
+      id: "lb_boss_005",
+      mode: "lightning-builder",
+      topic: "lightning_safety",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A camper moves from a tall tree to the shore of a lake during a storm, thinking the lake is safer. Evaluate this reasoning.",
+      choices: [
+        "The camper is correct — water absorbs lightning and is safer than trees",
+        "Both locations are dangerous: trees risk side-flash strikes, and lake water conducts charge across its surface from a nearby strike",
+        "The camper is right because trees are the primary lightning hazard outdoors",
+        "The tree is safer because its roots ground charge directly and quickly"
+      ],
+      answer: "Both locations are dangerous: trees risk side-flash strikes, and lake water conducts charge across its surface from a nearby strike",
+      explanation: "Tall trees concentrate induced charge and can arc to a nearby person via side flash or root current. Lake water is equally dangerous — dissolved ions allow a nearby strike's charge to radiate across the entire surface. Moving from tree to lake trades one hazard for another equally serious one. The correct action is to leave both and seek an enclosed building or vehicle."
+    },
+ 
+    {
+      id: "lb_boss_006",
+      mode: "lightning-builder",
+      topic: "lightning_safety",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A coach clears athletes from an outdoor pool. An athlete argues: 'Pool water is treated — it's practically pure and safe.' Why is this wrong?",
+      choices: [
+        "The reasoning is correct — treated pool water is pure enough to be safe",
+        "Pool water contains chlorine compounds, pH-adjusting salts, and dissolved minerals that dissociate into ions, making it conductive",
+        "Pool water is dangerous only when cold, not because it conducts electricity",
+        "Only saltwater pools are dangerous; freshwater pools with chemical treatment are safe"
+      ],
+      answer: "Pool water contains chlorine compounds, pH-adjusting salts, and dissolved minerals that dissociate into ions, making it conductive",
+      explanation: "Pool treatment adds chlorine compounds, calcium, sodium bicarbonate, and other chemicals that dissociate into ions. Swimmers also introduce dissolved body salts. 'Treated' does not mean 'distilled' — pool water is an ionic solution and a capable conductor. A nearby strike can send current across the entire surface, endangering every swimmer."
+    },
+ 
+    {
+      id: "lb_boss_007",
+      mode: "lightning-builder",
+      topic: "aqueous_conductivity",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "Sugar (C₁₂H₂₂O₁₁) dissolves in one beaker; salt (NaCl) in another. Only one conducts electricity. Which and why — at the particle level?",
+      choices: [
+        "Sugar solution, because sugar molecules are larger and carry more charge",
+        "Salt solution, because NaCl separates into free Na⁺ and Cl⁻ ions that carry current; sugar dissolves as intact neutral molecules",
+        "Both conduct equally because both dissolve completely in water",
+        "Neither conducts because water molecules block ion movement"
+      ],
+      answer: "Salt solution, because NaCl separates into free Na⁺ and Cl⁻ ions that carry current; sugar dissolves as intact neutral molecules",
+      explanation: "NaCl is an ionic compound — water molecules pull it apart into free Na⁺ and Cl⁻ ions that migrate and carry charge. Sugar is a covalent molecule that dissolves without releasing ions; the intact neutral molecules carry no net charge and cannot transport current. Conductivity requires free, mobile charge carriers."
+    },
+ 
+    {
+      id: "lb_boss_008",
+      mode: "lightning-builder",
+      topic: "aqueous_conductivity",
+      difficulty: 3,
+      type: "multiple_choice",
+      prompt: "A person is completely soaked when lightning strikes nearby. Why is being wet more dangerous than being dry? Use ion and conductivity reasoning.",
+      choices: [
+        "Wet skin is heavier and slows the person from moving away from the strike zone",
+        "Sweat and water on skin contain dissolved ions, making the body surface more conductive and giving current an easier path",
+        "Water molecules on wet skin attract the stepped leader by aligning their dipoles toward it",
+        "Wet skin blocks current from entering the body internally, concentrating all danger on the skin surface"
+      ],
+      answer: "Sweat and water on skin contain dissolved ions, making the body surface more conductive and giving current an easier path",
+      explanation: "Sweat and tap water carry dissolved sodium, chloride, potassium, and other ions — creating a conductive film across the body's surface. This lowers skin resistance, allowing more current to flow for a given voltage. Whether from a direct strike or ground-current spread, a wet person faces greater risk because charge travels more easily through the ionic film on the skin."
+    }
+]
+};
 
 let MODES=[chargeClashMode,coulombChaosMode,ionicSurvivalMode,lightningBuilderMode];
 

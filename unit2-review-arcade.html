@@ -560,7 +560,7 @@ let total=0, correct=0, streak=0, bossCorrect=0, bossTotal=0, questionCount=0;
 let topicStats={};
 
 function init(){
-  Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0});
+  Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0,recovered:false});
   renderModes();
 }
 function renderModes(){
@@ -577,7 +577,7 @@ function renderModes(){
 function startMode(id){
   currentMode=MODES.find(m=>m.id===id);
   total=0;correct=0;streak=0;bossCorrect=0;bossTotal=0;questionCount=0;usedIds=[];answered=false;
-  Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0});
+  Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0,recovered:false});  
   document.getElementById("currentModeLabel").textContent=currentMode.title;
   show("gameScreen");
   nextQuestion();
@@ -593,19 +593,38 @@ function goMenu(){
 }
 function chooseQuestion(){
   questionCount++;
+
   const bossDue = (streak>0 && streak%5===0) || (questionCount%10===0);
+
   if(bossDue && currentMode.bossQuestions.length){
     const available=currentMode.bossQuestions.filter(q=>!usedIds.includes(q.id));
-    if(available.length){isBoss=true; return available[Math.floor(Math.random()*available.length)];}
+    if(available.length){
+      isBoss=true;
+      return available[Math.floor(Math.random()*available.length)];
+    }
   }
+
   isBoss=false;
+
   let pool=currentMode.questions.filter(q=>!usedIds.includes(q.id));
-  if(pool.length===0){return null;}
-  if(questionCount>7){
-    const weakTopics=Object.entries(topicStats).filter(([t,s])=>s.weakness>1).map(([t])=>t);
-    const weakPool=pool.filter(q=>weakTopics.includes(q.topic));
-    if(weakPool.length && Math.random()<0.45) pool=weakPool;
+
+  if(pool.length===0){
+    usedIds=[];
+    pool=currentMode.questions;
   }
+
+  if(questionCount>5){
+    const weakTopics=Object.entries(topicStats)
+      .filter(([t,s]) => s.weakness >= 2 && currentMode.topics.includes(t))
+      .map(([t]) => t);
+
+    const recoveryPool=pool.filter(q=>weakTopics.includes(q.topic));
+
+    if(recoveryPool.length && Math.random()<0.65){
+      pool=recoveryPool;
+    }
+  }
+
   return pool[Math.floor(Math.random()*pool.length)];
 }
 function nextQuestion(){
@@ -640,6 +659,10 @@ function answer(choice,btn){
     correct++; streak++;
     topicStats[currentQuestion.topic].correct++;
     topicStats[currentQuestion.topic].weakness=Math.max(0,topicStats[currentQuestion.topic].weakness-1);
+
+      if(topicStats[currentQuestion.topic].weakness === 0){
+        topicStats[currentQuestion.topic].recovered = true;
+      }
     btn.classList.add("correct");
     document.getElementById("feedbackBox").innerHTML=`<b style="color:var(--green)">Correct.</b> ${currentQuestion.explanation}`;
     if(isBoss){bossCorrect++; bigCelebrate("BOSS DEFEATED! ⚛️");}
@@ -648,6 +671,11 @@ function answer(choice,btn){
   }else{
     streak=0;
     topicStats[currentQuestion.topic].weakness+=2;
+
+    if(topicStats[currentQuestion.topic].weakness >= 4){
+      document.getElementById("topicPill").textContent =
+        "Recovery Focus: " + (TOPICS[currentQuestion.topic] || currentQuestion.topic);
+    }
     btn.classList.add("wrong");
     [...document.querySelectorAll(".answer-btn")].forEach(b=>{if(b.textContent===currentQuestion.answer)b.classList.add("correct")});
     document.getElementById("feedbackBox").innerHTML=`<b style="color:var(--red)">Not quite.</b> ${currentQuestion.explanation}`;

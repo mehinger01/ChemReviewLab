@@ -857,8 +857,7 @@ function nextQuestion(){
   if(total>=25){return finalReport();}
   currentQuestion=chooseQuestion();
   if(!currentQuestion){return finalReport();}
-  usedIds.push(currentQuestion.id);
-  answered=false;
+  usedIds.push(currentQuestion.id + "_" + questionCount);  answered=false;
   document.getElementById("nextBtn").disabled=true;
   document.getElementById("bossBanner").classList.toggle("show",isBoss);
   document.getElementById("questionMeta").textContent=`${TOPICS[currentQuestion.topic] || currentQuestion.topic} | Difficulty ${currentQuestion.difficulty}`;

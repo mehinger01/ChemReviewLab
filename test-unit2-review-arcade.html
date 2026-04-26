@@ -1918,16 +1918,45 @@ function init(){
 }
 
 function getModeRecord(modeId){
-  const raw=localStorage.getItem("chemReviewLab_records");
-  const records=raw ? JSON.parse(raw) : {};
-  return records[modeId] || {bestScore:0,bestTotal:0,bestStreak:0,bossCorrect:0,bossTotal:0};
+  const records = JSON.parse(localStorage.getItem("chemReviewRecords") || "{}");
+
+  return records[modeId] || {
+    bestScore: 0,
+    bestTotal: 0,
+    bestPercent: 0,
+    bestStreak: 0,
+    bossCorrect: 0,
+    bossTotal: 0
+  };
 }
 
-function saveModeRecord(modeId,score,total,bestStreak,bossCorrect,bossTotal){
-  const raw=localStorage.getItem("chemReviewLab_records");
-  const records=raw ? JSON.parse(raw) : {};
-  const old=records[modeId] || {bestScore:0,bestTotal:0,bestStreak:0,bossCorrect:0,bossTotal:0};
+function saveModeRecord(modeId,score,total,streak,bossCorrect,bossTotal){
+  if(!modeId || total === 0) return;
 
+  const records = JSON.parse(localStorage.getItem("chemReviewRecords") || "{}");
+
+  const old = records[modeId] || {
+    bestScore: 0,
+    bestTotal: 0,
+    bestPercent: 0,
+    bestStreak: 0,
+    bossCorrect: 0,
+    bossTotal: 0
+  };
+
+  const percent = total ? Math.round((score / total) * 100) : 0;
+
+  records[modeId] = {
+    bestScore: percent > old.bestPercent ? score : old.bestScore,
+    bestTotal: percent > old.bestPercent ? total : old.bestTotal,
+    bestPercent: Math.max(percent, old.bestPercent || 0),
+    bestStreak: Math.max(streak, old.bestStreak || 0),
+    bossCorrect: Math.max(bossCorrect, old.bossCorrect || 0),
+    bossTotal: Math.max(bossTotal, old.bossTotal || 0)
+  };
+
+  localStorage.setItem("chemReviewRecords", JSON.stringify(records));
+}
   const betterScore = score > old.bestScore || (score === old.bestScore && total > old.bestTotal);
 
   records[modeId]={
@@ -1958,7 +1987,7 @@ function renderModes(){
         ${m.questions.length} questions + ${m.bossQuestions.length} boss levels
       </p>
       <p style="margin-top:8px;color:var(--gold);font-weight:800">
-        Browser Record: ${record.bestScore}/${record.bestTotal || 0} | Best Streak: ${record.bestStreak}
+        Browser Record: ${record.bestScore}/${record.bestTotal} (${record.bestPercent}%) | Best Streak: ${record.bestStreak}
       </p>
     `
     grid.appendChild(div);

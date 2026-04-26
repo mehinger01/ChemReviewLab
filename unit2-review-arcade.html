@@ -203,6 +203,19 @@ bossQuestions:[
 {id:"iob02",mode:"ionic-survival",topic:"aqueous_conductivity",difficulty:3,type:"multiple_choice",prompt:"Boss: Why are aqueous ionic compounds often conductive?",choices:["Their dissolved ions can move and carry charge","Their molecules become neutrons","Their protons leave the nucleus","Their water disappears"],answer:"Their dissolved ions can move and carry charge",explanation:"Mobile ions in solution allow electric charge to flow."}
 ]};
 
+const placeholderLightningMode = {
+id:"lightning-builder",
+title:"Lightning Builder",
+subtitle:"Claude’s mode placeholder. Paste Claude’s full lightningBuilderMode object later.",
+topics:["lightning_formation","ionized_air","conductors_insulators","lightning_safety","aqueous_conductivity"],
+questions:[
+{id:"lb001",mode:"lightning-builder",topic:"lightning_formation",difficulty:1,type:"multiple_choice",prompt:"Inside a thundercloud, collisions between particles help create...",choices:["charge separation","solid salt","neutral paper only","sugar molecules"],answer:"charge separation",explanation:"Collisions in the cloud help separate charge, often leaving the cloud base negative."},
+{id:"lb002",mode:"lightning-builder",topic:"ionized_air",difficulty:2,type:"multiple_choice",prompt:"Air normally does not conduct well. What must happen for lightning to pass through it?",choices:["Air particles must become ionized","Air must become wood","Air must lose all atoms","Air must become sugar"],answer:"Air particles must become ionized",explanation:"Strong electric fields can ionize air, creating a pathway for charge movement."},
+{id:"lb003",mode:"lightning-builder",topic:"lightning_safety",difficulty:1,type:"multiple_choice",prompt:"Why should you avoid swimming during a lightning storm?",choices:["Water with dissolved ions can conduct electricity","Water always attracts all lightning","Water has no particles","Swimming creates protons"],answer:"Water with dissolved ions can conduct electricity",explanation:"Natural water contains dissolved ions that help charge move through it."}
+],
+bossQuestions:[
+{id:"lbb01",mode:"lightning-builder",topic:"lightning_formation",difficulty:3,type:"multiple_choice",prompt:"Boss: What sequence best explains cloud-to-ground lightning?",choices:["Charge separates, air ionizes, a path connects, electrons rapidly move","Salt dissolves, sugar forms, paper burns, protons vanish","Water freezes, neutrons move, carbon bonds, light stops","Ground becomes molecular, clouds disappear, air becomes metal"],answer:"Charge separates, air ionizes, a path connects, electrons rapidly move",explanation:"Lightning requires charge separation, ionized air pathways, and rapid charge movement through the connected path."}
+]};
 // ============================================================
 // ChemReviewLab — MODE 3: Lightning Builder
 // Unit 2 Chemistry Review Arcade
@@ -836,88 +849,25 @@ function goMenu(){
   updatePills();
   show("menuScreen");
 }
-
-  function chooseQuestion(){
-
+function chooseQuestion(){
   questionCount++;
-
-  const bossDue =
-    (streak > 0 && streak % 5 === 0) ||
-    (questionCount % 10 === 0);
-
+  const bossDue = (streak>0 && streak%5===0) || (questionCount%10===0);
   if(bossDue && currentMode.bossQuestions.length){
-
-    const available =
-      currentMode.bossQuestions.filter(
-        q => !usedIds.includes(q.id)
-      );
-
-    if(available.length){
-      isBoss = true;
-
-      return available[
-        Math.floor(Math.random() * available.length)
-      ];
-    }
+    const available=currentMode.bossQuestions.filter(q=>!usedIds.includes(q.id));
+    if(available.length){isBoss=true; return available[Math.floor(Math.random()*available.length)];}
   }
-
-  isBoss = false;
-
-  let pool =
-    currentMode.questions.filter(
-      q => !usedIds.includes(q.id)
-    );
-
-  if(pool.length === 0){
-    usedIds = [];
-    pool = currentMode.questions;
-  }
-
-  if(questionCount > 7){
-
-    const weakTopics =
-      Object.entries(topicStats)
-        .filter(([t,s]) => s.weakness > 1)
-        .map(([t]) => t);
-
-    const weakPool =
-      pool.filter(q =>
-        weakTopics.includes(q.topic)
-      );
-
-    if(
-      weakPool.length &&
-      Math.random() < 0.45
-    ){
-      pool = weakPool;
-    }
-  }
-
-  return pool[
-    Math.floor(Math.random() * pool.length)
-  ];
-}
-
   isBoss=false;
-
   let pool=currentMode.questions.filter(q=>!usedIds.includes(q.id));
-
-  if(pool.length===0){
-    usedIds = [];
-    pool = currentMode.questions;
-  }
-
+  if(pool.length===0){return null;}
   if(questionCount>7){
     const weakTopics=Object.entries(topicStats).filter(([t,s])=>s.weakness>1).map(([t])=>t);
     const weakPool=pool.filter(q=>weakTopics.includes(q.topic));
     if(weakPool.length && Math.random()<0.45) pool=weakPool;
   }
-
   return pool[Math.floor(Math.random()*pool.length)];
 }
-
 function nextQuestion(){
-  if(total>=2){return finalReport();}
+  if(total>=25){return finalReport();}
   currentQuestion=chooseQuestion();
   if(!currentQuestion){return finalReport();}
   usedIds.push(currentQuestion.id);

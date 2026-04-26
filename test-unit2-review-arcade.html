@@ -1909,13 +1909,38 @@ bossQuestions:[
 let MODES=[chargeClashMode,coulombChaosMode,ionicSurvivalMode,lightningBuilderMode];
 
 let currentMode=null, currentQuestion=null, usedIds=[], answered=false, isBoss=false;
-let total=0, correct=0, streak=0, bossCorrect=0, bossTotal=0, questionCount=0;
+let total=0, correct=0, streak=0, bestStreak=0, bossCorrect=0, bossTotal=0, questionCount=0;
 let topicStats={};
 
 function init(){
   Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0,recovered:false});
   renderModes();
 }
+
+function getModeRecord(modeId){
+  const raw=localStorage.getItem("chemReviewLab_records");
+  const records=raw ? JSON.parse(raw) : {};
+  return records[modeId] || {bestScore:0,bestTotal:0,bestStreak:0,bossCorrect:0,bossTotal:0};
+}
+
+function saveModeRecord(modeId,score,total,bestStreak,bossCorrect,bossTotal){
+  const raw=localStorage.getItem("chemReviewLab_records");
+  const records=raw ? JSON.parse(raw) : {};
+  const old=records[modeId] || {bestScore:0,bestTotal:0,bestStreak:0,bossCorrect:0,bossTotal:0};
+
+  const betterScore = score > old.bestScore || (score === old.bestScore && total > old.bestTotal);
+
+  records[modeId]={
+    bestScore: betterScore ? score : old.bestScore,
+    bestTotal: betterScore ? total : old.bestTotal,
+    bestStreak: Math.max(bestStreak, old.bestStreak || 0),
+    bossCorrect: Math.max(bossCorrect, old.bossCorrect || 0),
+    bossTotal: Math.max(bossTotal, old.bossTotal || 0)
+  };
+
+  localStorage.setItem("chemReviewLab_records",JSON.stringify(records));
+}  
+
 function renderModes(){
   const grid=document.getElementById("modeGrid");
   grid.innerHTML="";
@@ -1923,13 +1948,25 @@ function renderModes(){
     const div=document.createElement("div");
     div.className="mode-card";
     div.onclick=()=>startMode(m.id);
-    div.innerHTML=`<h2>${m.title}</h2><p>${m.subtitle}</p><p style="margin-top:10px;color:var(--green);font-weight:800">${m.questions.length} questions + ${m.bossQuestions.length} boss levels</p>`;
+
+    const record=getModeRecord(m.id);
+
+    div.innerHTML=`
+      <h2>${m.title}</h2>
+      <p>${m.subtitle}</p>
+      <p style="margin-top:10px;color:var(--green);font-weight:800">
+        ${m.questions.length} questions + ${m.bossQuestions.length} boss levels
+      </p>
+      <p style="margin-top:8px;color:var(--gold);font-weight:800">
+        Browser Record: ${record.bestScore}/${record.bestTotal || 0} | Best Streak: ${record.bestStreak}
+      </p>
+    `
     grid.appendChild(div);
   });
 }
 function startMode(id){
   currentMode=MODES.find(m=>m.id===id);
-  total=0;correct=0;streak=0;bossCorrect=0;bossTotal=0;questionCount=0;usedIds=[];answered=false;
+  total=0;correct=0;streak=0;bestStreak=0;bossCorrect=0;bossTotal=0;questionCount=0;usedIds=[];answered=false;
   Object.keys(TOPICS).forEach(t=>topicStats[t]={seen:0,correct:0,weakness:0,recovered:false});  
   document.getElementById("currentModeLabel").textContent=currentMode.title;
   show("gameScreen");
@@ -2009,7 +2046,8 @@ function answer(choice,btn){
   const right=choice===currentQuestion.answer;
   topicStats[currentQuestion.topic].seen++;
   if(right){
-    correct++; streak++;
+    correct++; streak++; 
+    bestStreak=Math.max(bestStreak,streak);
     topicStats[currentQuestion.topic].correct++;
     topicStats[currentQuestion.topic].weakness=Math.max(0,topicStats[currentQuestion.topic].weakness-1);
 
@@ -2048,6 +2086,7 @@ function getWeakestTopic(){
 }
 function finalReport(){
   const strong=[], almost=[], weak=[];
+  saveModeRecord(currentMode.id,correct,total,bestStreak,bossCorrect,bossTotal);
   Object.entries(topicStats).forEach(([t,s])=>{
     if(s.seen===0)return;
     const pct=s.correct/s.seen;

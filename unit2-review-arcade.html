@@ -203,15 +203,351 @@ bossQuestions:[
 {id:"iob02",mode:"ionic-survival",topic:"aqueous_conductivity",difficulty:3,type:"multiple_choice",prompt:"Boss: Why are aqueous ionic compounds often conductive?",choices:["Their dissolved ions can move and carry charge","Their molecules become neutrons","Their protons leave the nucleus","Their water disappears"],answer:"Their dissolved ions can move and carry charge",explanation:"Mobile ions in solution allow electric charge to flow."}
 ]};
 
-const placeholderLightningMode = {
+const lightningBuilderMode = {
 id:"lightning-builder",
 title:"Lightning Builder",
 subtitle:"Claude’s mode placeholder. Paste Claude’s full lightningBuilderMode object later.",
 topics:["lightning_formation","ionized_air","conductors_insulators","lightning_safety","aqueous_conductivity"],
 questions:[
-{id:"lb001",mode:"lightning-builder",topic:"lightning_formation",difficulty:1,type:"multiple_choice",prompt:"Inside a thundercloud, collisions between particles help create...",choices:["charge separation","solid salt","neutral paper only","sugar molecules"],answer:"charge separation",explanation:"Collisions in the cloud help separate charge, often leaving the cloud base negative."},
-{id:"lb002",mode:"lightning-builder",topic:"ionized_air",difficulty:2,type:"multiple_choice",prompt:"Air normally does not conduct well. What must happen for lightning to pass through it?",choices:["Air particles must become ionized","Air must become wood","Air must lose all atoms","Air must become sugar"],answer:"Air particles must become ionized",explanation:"Strong electric fields can ionize air, creating a pathway for charge movement."},
-{id:"lb003",mode:"lightning-builder",topic:"lightning_safety",difficulty:1,type:"multiple_choice",prompt:"Why should you avoid swimming during a lightning storm?",choices:["Water with dissolved ions can conduct electricity","Water always attracts all lightning","Water has no particles","Swimming creates protons"],answer:"Water with dissolved ions can conduct electricity",explanation:"Natural water contains dissolved ions that help charge move through it."}
+  {
+    id: "lb001",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "What causes charge separation inside a storm cloud?",
+    choices: [
+      "Collisions between ice particles and water droplets",
+      "Earth's magnetic field",
+      "Evaporation from lakes",
+      "Moonlight interacting with clouds"
+    ],
+    answer: "Collisions between ice particles and water droplets",
+    explanation: "Collisions inside storm clouds transfer electrons and separate charges."
+  },
+ 
+  {
+    id: "lb002",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "If electrons move onto an object, the object becomes:",
+    choices: [
+      "positively charged",
+      "neutral",
+      "negatively charged",
+      "magnetic"
+    ],
+    answer: "negatively charged",
+    explanation: "Gaining electrons creates a negative charge."
+  },
+ 
+  {
+    id: "lb003",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Why can a neutral object be attracted to a charged object?",
+    choices: [
+      "Neutral objects always contain positive charge only",
+      "Charges inside the neutral object can shift slightly",
+      "Neutral objects become radioactive",
+      "Gravity increases"
+    ],
+    answer: "Charges inside the neutral object can shift slightly",
+    explanation: "Polarization allows charges inside neutral objects to rearrange."
+  },
+ 
+  {
+    id: "lb004",
+    mode: "lightning-builder",
+    topic: "conductors_insulators",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Why are metals good conductors?",
+    choices: [
+      "They contain moving charged particles",
+      "They are always cold",
+      "They create electrons",
+      "They block electricity"
+    ],
+    answer: "They contain moving charged particles",
+    explanation: "Electrons move easily through metals."
+  },
+ 
+  {
+    id: "lb005",
+    mode: "lightning-builder",
+    topic: "conductors_insulators",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Which material is the BEST electrical insulator?",
+    choices: [
+      "Copper",
+      "Aluminum",
+      "Rubber",
+      "Salt water"
+    ],
+    answer: "Rubber",
+    explanation: "Rubber strongly resists electron flow."
+  },
+ 
+  {
+    id: "lb006",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Static electricity most commonly results from:",
+    choices: [
+      "nuclear reactions",
+      "electron transfer between materials",
+      "sound waves",
+      "chemical burning"
+    ],
+    answer: "electron transfer between materials",
+    explanation: "Friction often transfers electrons between surfaces."
+  },
+ 
+  {
+    id: "lb007",
+    mode: "lightning-builder",
+    topic: "lightning_safety",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Grounding reduces electric charge buildup by:",
+    choices: [
+      "destroying electrons",
+      "moving charge safely away",
+      "freezing charges",
+      "making new protons"
+    ],
+    answer: "moving charge safely away",
+    explanation: "Grounding allows excess charge to flow away safely."
+  },
+ 
+  {
+    id: "lb008",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Lightning occurs when:",
+    choices: [
+      "charges suddenly discharge between regions",
+      "clouds freeze instantly",
+      "air disappears",
+      "wind stops moving"
+    ],
+    answer: "charges suddenly discharge between regions",
+    explanation: "Lightning is a rapid discharge of electrical energy."
+  },
+ 
+  {
+    id: "lb009",
+    mode: "lightning-builder",
+    topic: "ionized_air",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Before lightning strikes, the air becomes:",
+    choices: [
+      "solid",
+      "ionized",
+      "frozen",
+      "radioactive"
+    ],
+    answer: "ionized",
+    explanation: "Ionized air allows charge to move through it."
+  },
+ 
+  {
+    id: "lb010",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "An electric field is strongest:",
+    choices: [
+      "far from charges",
+      "near charges",
+      "inside rubber",
+      "underwater only"
+    ],
+    answer: "near charges",
+    explanation: "Electric force strength increases near charges."
+  },
+ 
+  {
+    id: "lb011",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Opposite charges:",
+    choices: [
+      "repel",
+      "attract",
+      "disappear",
+      "explode"
+    ],
+    answer: "attract",
+    explanation: "Positive and negative charges attract each other."
+  },
+ 
+  {
+    id: "lb012",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Like charges:",
+    choices: [
+      "attract",
+      "repel",
+      "become neutral",
+      "freeze"
+    ],
+    answer: "repel",
+    explanation: "Similar charges push apart."
+  },
+ 
+  {
+    id: "lb013",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Rubbing a balloon on hair causes:",
+    choices: [
+      "protons to move",
+      "electrons to transfer",
+      "neutrons to disappear",
+      "heat lightning"
+    ],
+    answer: "electrons to transfer",
+    explanation: "Electrons transfer between materials during contact."
+  },
+ 
+  {
+    id: "lb014",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "The bottom of a thundercloud often becomes:",
+    choices: [
+      "positively charged",
+      "neutral",
+      "negatively charged",
+      "magnetic"
+    ],
+    answer: "negatively charged",
+    explanation: "Charge separation often leaves excess negative charge near the cloud base."
+  },
+ 
+  {
+    id: "lb015",
+    mode: "lightning-builder",
+    topic: "lightning_formation",
+    difficulty: 2,
+    type: "multiple_choice",
+    prompt: "A negatively charged cloud can cause the ground below to become:",
+    choices: [
+      "negatively charged",
+      "positively charged",
+      "radioactive",
+      "frozen"
+    ],
+    answer: "positively charged",
+    explanation: "Negative cloud charge repels electrons in the ground, inducing a positive surface charge."
+  },
+ 
+  {
+    id: "lb016",
+    mode: "lightning-builder",
+    topic: "aqueous_conductivity",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Salt water conducts electricity well because it contains:",
+    choices: [
+      "moving ions",
+      "frozen particles",
+      "magnetic atoms",
+      "plastic molecules"
+    ],
+    answer: "moving ions",
+    explanation: "Ions carry charge through solution."
+  },
+ 
+  {
+    id: "lb017",
+    mode: "lightning-builder",
+    topic: "ionized_air",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Electric current is the movement of:",
+    choices: [
+      "protons",
+      "atoms",
+      "charged particles",
+      "light waves"
+    ],
+    answer: "charged particles",
+    explanation: "Current is moving electric charge."
+  },
+ 
+  {
+    id: "lb018",
+    mode: "lightning-builder",
+    topic: "lightning_safety",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Lightning rods help protect buildings by:",
+    choices: [
+      "attracting lightning safely to ground",
+      "blocking storms",
+      "absorbing rain",
+      "destroying clouds"
+    ],
+    answer: "attracting lightning safely to ground",
+    explanation: "Lightning rods provide a safe conducting path for charge to reach earth."
+  },
+ 
+  {
+    id: "lb019",
+    mode: "lightning-builder",
+    topic: "conductors_insulators",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "Why are power lines coated with insulating material?",
+    choices: [
+      "to increase lightning",
+      "to stop unwanted current flow",
+      "to create charge",
+      "to cool the wires"
+    ],
+    answer: "to stop unwanted current flow",
+    explanation: "Insulators prevent dangerous current from escaping the wire."
+  },
+ 
+  {
+    id: "lb020",
+    mode: "lightning-builder",
+    topic: "ionized_air",
+    difficulty: 1,
+    type: "multiple_choice",
+    prompt: "A spark is an example of:",
+    choices: [
+      "chemical bonding",
+      "electric discharge",
+      "nuclear decay",
+      "condensation"
+    ],
+    answer: "electric discharge",
+    explanation: "A spark occurs when charge rapidly moves through air."
+  }
 ],
 bossQuestions:[
 {id:"lbb01",mode:"lightning-builder",topic:"lightning_formation",difficulty:3,type:"multiple_choice",prompt:"Boss: What sequence best explains cloud-to-ground lightning?",choices:["Charge separates, air ionizes, a path connects, electrons rapidly move","Salt dissolves, sugar forms, paper burns, protons vanish","Water freezes, neutrons move, carbon bonds, light stops","Ground becomes molecular, clouds disappear, air becomes metal"],answer:"Charge separates, air ionizes, a path connects, electrons rapidly move",explanation:"Lightning requires charge separation, ionized air pathways, and rapid charge movement through the connected path."}

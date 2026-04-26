@@ -1957,17 +1957,7 @@ function saveModeRecord(modeId,score,total,streak,bossCorrect,bossTotal){
 
   localStorage.setItem("chemReviewRecords", JSON.stringify(records));
 }
-   records[modeId]={
-    bestScore: betterScore ? score : old.bestScore,
-    bestTotal: betterScore ? total : old.bestTotal,
-    bestStreak: Math.max(bestStreak, old.bestStreak || 0),
-    bossCorrect: Math.max(bossCorrect, old.bossCorrect || 0),
-    bossTotal: Math.max(bossTotal, old.bossTotal || 0)
-  };
-
-  localStorage.setItem("chemReviewLab_records",JSON.stringify(records));
-}  
-
+ 
 function renderModes(){
   const grid=document.getElementById("modeGrid");
   grid.innerHTML="";

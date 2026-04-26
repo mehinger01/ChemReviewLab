@@ -844,8 +844,11 @@ function chooseQuestion(){
     if(available.length){isBoss=true; return available[Math.floor(Math.random()*available.length)];}
   }
   isBoss=false;
-  let pool=currentMode.questions.filter(q=>!usedIds.includes(q.id));
-  if(pool.length===0){return null;}
+if(pool.length===0){
+  usedIds = [];
+  pool = currentMode.questions;
+}
+
   if(questionCount>7){
     const weakTopics=Object.entries(topicStats).filter(([t,s])=>s.weakness>1).map(([t])=>t);
     const weakPool=pool.filter(q=>weakTopics.includes(q.topic));
@@ -854,7 +857,7 @@ function chooseQuestion(){
   return pool[Math.floor(Math.random()*pool.length)];
 }
 function nextQuestion(){
-  if(total>=25){return finalReport();}
+  if(total>=2){return finalReport();}
   currentQuestion=chooseQuestion();
   if(!currentQuestion){return finalReport();}
   usedIds.push(currentQuestion.id);

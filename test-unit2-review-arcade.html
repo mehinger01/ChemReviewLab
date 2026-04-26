@@ -111,6 +111,8 @@ button.secondary{background:#1e293b;color:white;border:1px solid rgba(255,255,25
 <script>
 const TOPICS = {
   subatomic_particles:"Subatomic Particles",
+  attraction_repulsion:"Attraction & Repulsion",
+  static_electricity:"Static Electricity",
   charge_interactions:"Charge Interactions",
   net_charge:"Net Charge",
   electron_transfer:"Electron Transfer",
@@ -137,8 +139,14 @@ const chargeClashMode = {
 id:"charge-clash",
 title:"Charge Clash",
 subtitle:"Master atoms, charge, attraction, repulsion, electron transfer, and polarization.",
-topics:["subatomic_particles","charge_interactions","net_charge","electron_transfer","polarization","model_explanations"],
-questions:[
+  topics:[
+    "charge_interactions",
+    "attraction_repulsion",
+    "static_electricity",
+    "electron_transfer",
+    "conductors_insulators"
+  ],
+    questions:[
     {
       id: "cc001",
       mode: "charge-clash",

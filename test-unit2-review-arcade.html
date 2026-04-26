@@ -1957,9 +1957,7 @@ function saveModeRecord(modeId,score,total,streak,bossCorrect,bossTotal){
 
   localStorage.setItem("chemReviewRecords", JSON.stringify(records));
 }
-  const betterScore = score > old.bestScore || (score === old.bestScore && total > old.bestTotal);
-
-  records[modeId]={
+   records[modeId]={
     bestScore: betterScore ? score : old.bestScore,
     bestTotal: betterScore ? total : old.bestTotal,
     bestStreak: Math.max(bestStreak, old.bestStreak || 0),
